@@ -52,7 +52,7 @@ function getAbbr(faction, checkBase) {
 }
 
 Vue.component('research', {
-    props: ['cat', 'cost', 'id', 'req', 'rchSelected', 'hasUB', 'hasUP', 'hasSP'],
+    props: ['cat', 'cost', 'id', 'req', 'rchSelected', 'rchTooltip', 'hasUB', 'hasUP', 'hasSP'],
     data() {
         return {
             checked: false
@@ -170,7 +170,7 @@ Vue.component('research', {
             }
         }
     },
-    template: '<div v-show="show" :id="id" :class="[cat, {checked, enabled, available}]" @click="toggleResearch"><div class="background"></div><img src="img/OKSign.png" alt="V" class="sign ok-sign"><img src="img/NOSign.png" alt="X" class="sign no-sign"></div>'
+    template: '<div v-show="show" v-tooltip="{ content: rchTooltip, html: true }" :id="id" :class="[cat, {checked, enabled, available}]" @click="toggleResearch"><div class="background"></div><img src="img/OKSign.png" alt="V" class="sign ok-sign"><img src="img/NOSign.png" alt="X" class="sign no-sign"></div>'
 });
 
 const regA = /good|evil|neutral|order|chaos|balance/ig
@@ -223,6 +223,7 @@ function runApp() {
             elite: false,
             templateText: '',
             imported: 0,
+            nawRchTree: {},
             nawSections: {},
             nawPage: '',
             nawBuild: '',
@@ -660,4 +661,20 @@ function runApp() {
             vm.nawSections[s] = html;
         });
     }
+    $.get(`${nawRoot}/Researchtree/index.php`, data => {
+        let html = $.parseHTML( data );
+        let rchTree = $( 'area', html ).filter(function() {
+             return $( this ).attr( "research" ).match(regR);
+        }).map(function () {
+            let rch = $( this ).attr( "research" ).match(regR)[0];
+            if(validText.includes(rch)) {
+                return { name: rch, str: $( this ).attr( "research" )};
+            }
+        }).get();
+        let nawRchTree = {};
+        for(let r of rchTree) {
+            nawRchTree[r.name] = r.str;
+        }
+        vm.nawRchTree = nawRchTree;
+    });
 }

@@ -3,8 +3,9 @@
 <meta charset="UTF-8">
 <head>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/v-tooltip"></script>
   <title>Realm Grinder Template Viewer</title>
 </head>
 
@@ -107,43 +108,43 @@
     <div class="research-branch">
       <div id="Spellcraft" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Spellcraft" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Spellcraft"></research>
+        <research v-for="item in rTreeData.Spellcraft" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Spellcraft"></research>
       </div>
     </div>
     <div class="research-branch">
       <div id="Craftsmanship" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Craftsmanship" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Craftsmanship"></research>
+        <research v-for="item in rTreeData.Craftsmanship" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Craftsmanship"></research>
       </div>
     </div>
     <div class="research-branch">
       <div id="Divine" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Divine" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Divine"></research>
+        <research v-for="item in rTreeData.Divine" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Divine"></research>
       </div>
     </div>
     <div class="research-branch">
     <div id="Economics" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Economics" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Economics"></research>
+        <research v-for="item in rTreeData.Economics" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Economics"></research>
       </div>
     </div>
     <div class="research-branch">
       <div id="Alchemy" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Alchemy" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Alchemy"></research>
+        <research v-for="item in rTreeData.Alchemy" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Alchemy"></research>
       </div>
     </div>
     <div class="research-branch">
       <div id="Warfare" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Warfare" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Warfare"></research>
+        <research v-for="item in rTreeData.Warfare" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Warfare"></research>
       </div>
     </div>
     <div class="research-branch" v-show="rein>=175">
       <div id="Forbidden" class="facility"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Forbidden" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Forbidden"></research>
+        <research v-for="item in rTreeData.Forbidden" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Forbidden"></research>
       </div>
     </div>
   </div>
