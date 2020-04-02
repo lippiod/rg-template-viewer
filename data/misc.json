@@ -1,0 +1,90 @@
+{
+    "factionGroups": {
+        "base": ["FR", "EL", "AN", "GB", "UD", "DM", "TT", "DD", "FC"],
+        "prestige": ["DN", "DW", "DG"],
+        "elite": ["AR", "DJ", "MK"],
+        "aligns": {
+            "good": ["FR", "EL", "AN", "DN"],
+            "evil": ["GB", "UD", "DM", "DW"],
+            "neutral": ["TT", "DD", "FC", "DG"],
+            "order": ["AN", "UD", "TT", "AR"],
+            "chaos": ["FR", "DM", "FC", "DJ"],
+            "balance": ["EL", "GB", "DD", "MK"]
+        }
+    },
+
+    "nawPageList": {
+        "MercBuilds": {
+            "min": 16,
+            "max": 16,
+            "prestige": false,
+            "text": "Mercenary (R3-R16)"
+        },
+        "ResearchBuilds": {
+            "min": 16,
+            "max": 29,
+            "prestige": false,
+            "text": "Base Research (R16-R29)"
+        },
+        "PBuilds": {
+            "min": 29,
+            "max": 39,
+            "prestige": true,
+            "text": "Prestige Research (R29-R39)"
+        },
+        "R40-R46": {
+            "min": 40,
+            "max": 46,
+            "prestige": false,
+            "text": "Ascension 1 (R40-R46)"
+        },
+        "R47-R60": {
+            "min": 47,
+            "max": 59,
+            "prestige": true,
+            "text": "Dragon (R47-R59)"
+        },
+        "R60-R75": {
+            "min": 60,
+            "max": 75,
+            "prestige": true,
+            "text": "Lineage (R60-R75)"
+        },
+        "R75Plus": {
+            "min": 75,
+            "max": 99,
+            "prestige": true,
+            "text": "Mercenary Research (R75-R99)"
+        },
+        "R100Plus": {
+            "min": 100,
+            "max": 115,
+            "prestige": false,
+            "text": "Ascension 2 (R100-R115)"
+        },
+        "R116Plus": {
+            "min": 116,
+            "max": 125,
+            "prestige": true,
+            "text": "A2 Prestige (R116-R125)"
+        },
+        "R125Plus": {
+            "min": 125,
+            "max": 135,
+            "prestige": true,
+            "text": "MAD Factions (R125-R135)"
+        },
+        "R135Plus": {
+            "min": 135,
+            "max": 159,
+            "prestige": true,
+            "text": "Elite Challenges (R35-R159)"
+        },
+        "R160Plus": {
+            "min": 160,
+            "max": 190,
+            "prestige": true,
+            "text": "Ascension 3 (R160+)"
+        }
+    }
+}

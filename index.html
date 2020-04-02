@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>Realm Grinder Template Viewer</title>
+</head>
+
+
+<div id="template-viewer">
+  <h1>Realm Grinder Template Viewer</h1>
+  <div id="config-zone">
+    <textarea style="display:block" id="template" rows="8" cols="50" v-model.lazy="templateText" placeholder="Enter template text here"></textarea>
+    <input type="button" value="import" @click="importBtn()">
+    <input type="button" value="clear text" @click="clearBtn('string')">
+    <input type="button" value="clear selection" @click="clearBtn('select')">
+    <input type="button" value="export string" @click="exportBtn('string')">
+    <div id="not-a-wiki">
+      <strong>Import build from <a target="_blank" href="http://musicfamily.org/realm/">Not a Wiki</a>:</strong>
+      <div>
+        <label for="naw-section">Page:</label>
+        <select id="naw-section" v-model="nawPage">
+          <option value="" disabled>---Please select a section---</option>
+          <option v-for="(item, ind) in nawPageList" :value="ind" :key="ind">{{ item.text }}</option>
+        </select>
+        <a v-show="nawPage.length>0" target="_blank" :href="pageUrl">Go to build page</a>
+      </div>
+      <div>
+        <label for="naw-build">Build:</label>
+        <select id="naw-build" v-model="nawBuild">
+          <option value="" disabled>---Please select a build---</option>
+          <option v-for="(item, ind) in nawBuildList" :key="ind">{{ item }}</option>
+        </select>
+      </div>
+      <div id="build-content" v-html="nawBuildHtml"></div>
+    </div>
+    <h3>Configuration</h3>
+    <div class="config">
+      <input type="checkbox" id="hide-research" v-model="hideResearch">
+      <label for="hide-research">hide unavailable researches</label>
+    </div>
+    <div class="config">
+      <label for="reincarnation">Reincarnation:</label>
+      <input type="number" min="16" max="190" id="reincarnation" v-model.lazy.number="rein">
+      <span>Research Points: {{ getRps }}</span>
+    </div>
+    <div class="config">
+      <label for="base-faction">Faction:</label>
+      <select id="base-faction" v-model="faction" class="color-select" :class="colorSelected">
+        <option></option>
+        <option v-for="(item, ind) in baseFactions" :key="ind" :value="item.abbr" :class="item.color">{{ item.name }}</option>
+      </select>
+      <input type="checkbox" id="prestige" v-model="prestige">
+      <label for="prestige">prestige</label>
+      <input type="checkbox" id="elite" v-model="elite">
+      <label for="elite">elite</label>
+    </div>
+    <div class="config">
+      <div v-show="faction=='MC'">
+        <div>
+          <span>Alignment 1:</span>
+          <input type="radio" id="good" value="good" v-model="mercUpgrades.align[0]">
+          <label for="good">Good</label>
+          <input type="radio" id="evil" value="evil" v-model="mercUpgrades.align[0]">
+          <label for="evil">Evil</label>
+          <input type="radio" id="neutral" value="neutral" v-model="mercUpgrades.align[0]">
+          <label for="neutral">Neutral</label>
+        </div>
+        <div v-show="showA3">
+          <span>Alignment 2:</span>
+          <input type="radio" id="order" value="order" v-model="mercUpgrades.align[1]">
+          <label for="order">Order</label>
+          <input type="radio" id="chaos" value="chaos" v-model="mercUpgrades.align[1]">
+          <label for="chaos">Chaos</label>
+          <input type="radio" id="balance" value="balance" v-model="mercUpgrades.align[1]">
+          <label for="balance">Balance</label>
+        </div>
+      </div>
+    </div>
+    <div class="config">
+      <div v-show="rein>=130&&rein<160">
+        <span>Archon bloodline through:</span>
+        <input type="radio" id="ar-blood" value="bloodline" v-model="archonBlood">
+        <label for="ar-blood">bloodline</label>
+        <input type="radio" id="ar-rch" value="A400" v-model="archonBlood">
+        <label for="ar-rch">A400</label>
+        <input type="radio" id="ar-none" value="none" v-model="archonBlood">
+        <label for="ar-none">none</label><br>
+        <div v-show="archonBlood!='none'">
+          <span>Effect:</span>
+          <input type="number" min="1" max="100" v-model.lazy.number="slotAdd" style="width:40px">
+          <span>additional slots.</span>
+          <span v-show="slotAdd * (slotAdd - 1) > 0">Need {{ slotAdd * (slotAdd - 1) }} days spent this game</span><br>
+        </div>
+      </div>
+    </div>
+    <div class="config" v-show="showA3">
+      {{ pointsUsed }} points used.<span v-show="pointsUsed-budgets>500"><br>Need {{ requiredTime }} spent this game</span>
+    </div>
+    <div style="margin:10px">
+      <p style="margin:5px" v-for="(item, key) in researchSlots" :key="key">{{ key }}: {{ researchSelected[key].cost }}<span v-show="showTotal"> / {{ item }}</span><span v-show="showA3"> / {{ budgets }}</span><span class="debug" v-for="(rch, k) in researchSelected[key].rch" :key="k"><br>{{ rch }},</span></p>
+    </div>
+  </div>
+  <div id="research-tree">
+    <div class="research-branch">
+      <div id="Spellcraft" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Spellcraft" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Spellcraft"></research>
+      </div>
+    </div>
+    <div class="research-branch">
+      <div id="Craftsmanship" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Craftsmanship" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Craftsmanship"></research>
+      </div>
+    </div>
+    <div class="research-branch">
+      <div id="Divine" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Divine" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Divine"></research>
+      </div>
+    </div>
+    <div class="research-branch">
+    <div id="Economics" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Economics" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Economics"></research>
+      </div>
+    </div>
+    <div class="research-branch">
+      <div id="Alchemy" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Alchemy" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Alchemy"></research>
+      </div>
+    </div>
+    <div class="research-branch">
+      <div id="Warfare" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Warfare" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Warfare"></research>
+      </div>
+    </div>
+    <div class="research-branch" v-show="rein>=175">
+      <div id="Forbidden" class="facility"></div>
+      <div class="researches">
+        <research v-for="item in rTreeData.Forbidden" :key="item.id" v-bind="[item, mercTrigger]" @res-change="resChange" :rch-selected="researchSelected.Forbidden"></research>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="index.js"></script>
+
+</html>

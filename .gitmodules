@@ -1,0 +1,3 @@
+[submodule "notawiki"]
+	path = notawiki
+	url = https://github.com/G00FBALL/not-a-wiki.git

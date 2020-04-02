@@ -1,0 +1,1941 @@
+{
+    "Spellcraft": [
+        {
+            "cat": "Spellcraft",
+            "cost": 1,
+            "id": "S1",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 10,
+            "id": "S10",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 30,
+            "id": "S30",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 50,
+            "id": "S50",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 105,
+            "id": "S105",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 135,
+            "id": "S135",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 150,
+            "id": "S150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 175,
+            "id": "S175",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL",
+                ":UP"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 180,
+            "id": "S180",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 200,
+            "id": "S200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 215,
+            "id": "S215",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 225,
+            "id": "S225",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 250,
+            "id": "S250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 251,
+            "id": "S251",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 270,
+            "id": "S270",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 300,
+            "id": "S300",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 305,
+            "id": "S305",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 330,
+            "id": "S330",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 375,
+            "id": "S375",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 400,
+            "id": "S400",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 435,
+            "id": "S435",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DW"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 460,
+            "id": "S460",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 500,
+            "id": "S500",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 545,
+            "id": "S545",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 590,
+            "id": "S590",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR",
+                "DN"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 1275,
+            "id": "S1275",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 1450,
+            "id": "S1450",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DG"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 1500,
+            "id": "S1500",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC",
+                "DG"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 2875,
+            "id": "S2875",
+            "free": true,
+            "imported": false,
+            "req": [
+                "MC"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 3200,
+            "id": "S3200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 5125,
+            "id": "S5125",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 5375,
+            "id": "S5375",
+            "free": false,
+            "imported": false,
+            "req": [
+                "chaos"
+            ]
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 5625,
+            "id": "S5625",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Spellcraft",
+            "cost": 5875,
+            "id": "S5875",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ],
+    "Craftsmanship": [
+        {
+            "cat": "Craftsmanship",
+            "cost": 1,
+            "id": "C1",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 10,
+            "id": "C10",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 25,
+            "id": "C25",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 50,
+            "id": "C50",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 80,
+            "id": "C80",
+            "free": false,
+            "imported": false,
+            "req": [
+                "~neutral"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 105,
+            "id": "C105",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 120,
+            "id": "C120",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 135,
+            "id": "C135",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 150,
+            "id": "C150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 175,
+            "id": "C175",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 200,
+            "id": "C200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 225,
+            "id": "C225",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 250,
+            "id": "C250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 251,
+            "id": "C251",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 300,
+            "id": "C300",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 305,
+            "id": "C305",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 330,
+            "id": "C330",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 340,
+            "id": "C340",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 375,
+            "id": "C375",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 400,
+            "id": "C400",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 405,
+            "id": "C405",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DN",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 460,
+            "id": "C460",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 500,
+            "id": "C500",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 520,
+            "id": "C520",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DN",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 590,
+            "id": "C590",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL",
+                "DN"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 1300,
+            "id": "C1300",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DG"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 1325,
+            "id": "C1325",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 1500,
+            "id": "C1500",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT",
+                "DG"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 3000,
+            "id": "C3000",
+            "free": true,
+            "imported": false,
+            "req": [
+                "MC"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 3100,
+            "id": "C3100",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 5125,
+            "id": "C5125",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 5375,
+            "id": "C5375",
+            "free": false,
+            "imported": false,
+            "req": [
+                "neutral"
+            ]
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 5625,
+            "id": "C5625",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Craftsmanship",
+            "cost": 5875,
+            "id": "C5875",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ],
+    "Divine": [
+        {
+            "cat": "Divine",
+            "cost": 1,
+            "id": "D1",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 10,
+            "id": "D10",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 25,
+            "id": "D25",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 50,
+            "id": "D50",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 55,
+            "id": "D55",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 135,
+            "id": "D135",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 150,
+            "id": "D150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 175,
+            "id": "D175",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 200,
+            "id": "D200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 205,
+            "id": "D205",
+            "free": false,
+            "imported": false,
+            "req": [
+                "good"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 225,
+            "id": "D225",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 245,
+            "id": "D245",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 250,
+            "id": "D250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 260,
+            "id": "D260",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 275,
+            "id": "D275",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 290,
+            "id": "D290",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 320,
+            "id": "D320",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 330,
+            "id": "D330",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 350,
+            "id": "D350",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 400,
+            "id": "D400",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 435,
+            "id": "D435",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DN",
+                "good"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 480,
+            "id": "D480",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 525,
+            "id": "D525",
+            "free": false,
+            "imported": false,
+            "req": [
+                "good"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 560,
+            "id": "D560",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DW"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 590,
+            "id": "D590",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN",
+                "DN"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 1125,
+            "id": "D1125",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DG",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 1275,
+            "id": "D1275",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 1375,
+            "id": "D1375",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 2775,
+            "id": "D2775",
+            "free": true,
+            "imported": false,
+            "req": [
+                "MC"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 3350,
+            "id": "D3350",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 5125,
+            "id": "D5125",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 5375,
+            "id": "D5375",
+            "free": false,
+            "imported": false,
+            "req": [
+                "good"
+            ]
+        },
+        {
+            "cat": "Divine",
+            "cost": 5625,
+            "id": "D5625",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Divine",
+            "cost": 5875,
+            "id": "D5875",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ],
+    "Economics": [
+        {
+            "cat": "Economics",
+            "cost": 1,
+            "id": "E1",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 10,
+            "id": "E10",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 25,
+            "id": "E25",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 30,
+            "id": "E30",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 50,
+            "id": "E50",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 80,
+            "id": "E80",
+            "free": false,
+            "imported": false,
+            "req": [
+                "~neutral"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 135,
+            "id": "E135",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 145,
+            "id": "E145",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 150,
+            "id": "E150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 200,
+            "id": "E200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 225,
+            "id": "E225",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 230,
+            "id": "E230",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 250,
+            "id": "E250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 260,
+            "id": "E260",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 275,
+            "id": "E275",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 290,
+            "id": "E290",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 320,
+            "id": "E320",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 330,
+            "id": "E330",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 350,
+            "id": "E350",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 400,
+            "id": "E400",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 410,
+            "id": "E410",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DN",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 460,
+            "id": "E460",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 480,
+            "id": "E480",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 495,
+            "id": "E495",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DW",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 590,
+            "id": "E590",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB",
+                "DW"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 1225,
+            "id": "E1225",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DG"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 1325,
+            "id": "E1325",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 1425,
+            "id": "E1425",
+            "free": false,
+            "imported": false,
+            "req": [
+                "neutral"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 3250,
+            "id": "E3250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 3300,
+            "id": "E3300",
+            "free": true,
+            "imported": false,
+            "req": [
+                "MC"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 5125,
+            "id": "E5125",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 5375,
+            "id": "E5375",
+            "free": false,
+            "imported": false,
+            "req": [
+                "balance"
+            ]
+        },
+        {
+            "cat": "Economics",
+            "cost": 5625,
+            "id": "E5625",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Economics",
+            "cost": 5875,
+            "id": "E5875",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ],
+    "Alchemy": [
+        {
+            "cat": "Alchemy",
+            "cost": 1,
+            "id": "A1",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 10,
+            "id": "A10",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 25,
+            "id": "A25",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 30,
+            "id": "A30",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FR",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 50,
+            "id": "A50",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 55,
+            "id": "A55",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 105,
+            "id": "A105",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 120,
+            "id": "A120",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 135,
+            "id": "A135",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 150,
+            "id": "A150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 175,
+            "id": "A175",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 200,
+            "id": "A200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 250,
+            "id": "A250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 251,
+            "id": "A251",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 270,
+            "id": "A270",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 300,
+            "id": "A300",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 305,
+            "id": "A305",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 330,
+            "id": "A330",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 375,
+            "id": "A375",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 400,
+            "id": "A400",
+            "free": false,
+            "imported": false,
+            "req": [
+                "~MC"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 410,
+            "id": "A410",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DW",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 480,
+            "id": "A480",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 495,
+            "id": "A495",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DN"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 545,
+            "id": "A545",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 590,
+            "id": "A590",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD",
+                "DW"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 1200,
+            "id": "A1200",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DG",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 1325,
+            "id": "A1325",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 1500,
+            "id": "A1500",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD",
+                "DG"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 2950,
+            "id": "A2950",
+            "free": true,
+            "imported": false,
+            "req": [
+                "MC"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 3400,
+            "id": "A3400",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 5125,
+            "id": "A5125",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 5375,
+            "id": "A5375",
+            "free": false,
+            "imported": false,
+            "req": [
+                "order"
+            ]
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 5625,
+            "id": "A5625",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Alchemy",
+            "cost": 5875,
+            "id": "A5875",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ],
+    "Warfare": [
+        {
+            "cat": "Warfare",
+            "cost": 1,
+            "id": "W1",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 10,
+            "id": "W10",
+            "free": true,
+            "imported": false,
+            "req": [
+                "EL",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 25,
+            "id": "W25",
+            "free": true,
+            "imported": false,
+            "req": [
+                "GB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 50,
+            "id": "W50",
+            "free": true,
+            "imported": false,
+            "req": [
+                "UD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 120,
+            "id": "W120",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 135,
+            "id": "W135",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 150,
+            "id": "W150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 175,
+            "id": "W175",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 180,
+            "id": "W180",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 200,
+            "id": "W200",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 205,
+            "id": "W205",
+            "free": false,
+            "imported": false,
+            "req": [
+                "evil"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 225,
+            "id": "W225",
+            "free": true,
+            "imported": false,
+            "req": [
+                "AN",
+                "good",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 250,
+            "id": "W250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 260,
+            "id": "W260",
+            "free": true,
+            "imported": false,
+            "req": [
+                "TT",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 275,
+            "id": "W275",
+            "free": true,
+            "imported": false,
+            "req": [
+                "FC"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 290,
+            "id": "W290",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 320,
+            "id": "W320",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 330,
+            "id": "W330",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 350,
+            "id": "W350",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DD",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 400,
+            "id": "W400",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 405,
+            "id": "W405",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DW",
+                ":UB"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 520,
+            "id": "W520",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DW",
+                ":SP"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 525,
+            "id": "W525",
+            "free": false,
+            "imported": false,
+            "req": [
+                "evil"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 560,
+            "id": "W560",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DN"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 590,
+            "id": "W590",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DM",
+                "DW"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 1275,
+            "id": "W1275",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 1375,
+            "id": "W1375",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 1400,
+            "id": "W1400",
+            "free": true,
+            "imported": false,
+            "req": [
+                "DG"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 3050,
+            "id": "W3050",
+            "free": true,
+            "imported": false,
+            "req": [
+                "MC"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 3150,
+            "id": "W3150",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 5125,
+            "id": "W5125",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 5375,
+            "id": "W5375",
+            "free": false,
+            "imported": false,
+            "req": [
+                "evil"
+            ]
+        },
+        {
+            "cat": "Warfare",
+            "cost": 5625,
+            "id": "W5625",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Warfare",
+            "cost": 5875,
+            "id": "W5875",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ],
+    "Forbidden": [
+        {
+            "cat": "Forbidden",
+            "cost": 5250,
+            "id": "F5250",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Forbidden",
+            "cost": 5500,
+            "id": "F5500",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Forbidden",
+            "cost": 5750,
+            "id": "F5750",
+            "free": false,
+            "imported": false,
+            "req": []
+        },
+        {
+            "cat": "Forbidden",
+            "cost": 6000,
+            "id": "F6000",
+            "free": false,
+            "imported": false,
+            "req": []
+        }
+    ]
+}

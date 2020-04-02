@@ -1,0 +1,344 @@
+
+#template-viewer {
+    max-width:1024px;
+    padding:15px;
+    margin:auto;
+}
+
+#config-zone {
+    padding:10px;
+    float:left;
+    max-width:450px;
+    word-break:break-word;
+}
+
+#not-a-wiki {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+#build-content {
+    height: 200px;
+    overflow: auto;
+    line-height: normal;
+}
+#build-content>p {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+#research-tree {
+    padding: 10px;
+    width: 420px;
+    background-color: black;
+    float: right;
+}
+
+.config {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.researches {
+    line-height: 0;
+    touch-action: pan-x pan-y;
+}
+
+.research-branch {
+    min-height: 84px;
+}
+
+.researches > div {
+    border: 0px;
+    margin: 1px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+}
+.facility {
+    float: left;
+    border: 0px;
+    margin: 2px;
+    width: 80px;
+    height: 80px;
+    background-image: url('img/Research Tree.png');
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background-image: url('img/Research Tree.png');
+}
+
+.researches>.available.enabled:not(.checked):hover {
+    opacity: 0.7;
+}
+.researches>:not(.available):not(.checked)>.background,.researches>:not(.enabled):not(.checked)>.background {
+    filter: brightness(50%);
+}
+
+.sign {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    user-select: none;
+    touch-action: none;
+}
+
+.researches>.checked>.ok-sign {
+    display: block;
+}
+.researches>:not(.available)>.no-sign {
+    display: block;
+}
+
+label {
+    user-select: none;
+}
+
+#Spellcraft { background-position: -2px -3px }
+#Craftsmanship { background-position: -2px -171px }
+#Divine { background-position: -2px -339px }
+#Economics { background-position: -2px -507px }
+#Alchemy { background-position: -2px -675px }
+#Warfare { background-position: -2px -843px }
+#Forbidden { background-position: -2px -1011px }
+
+#S1>.background { background-position: -84px -2px }
+#S10>.background { background-position: -126px -2px }
+#S30>.background { background-position: -168px -2px }
+#S50>.background { background-position: -210px -2px }
+#S105>.background { background-position: -252px -2px }
+#S135>.background { background-position: -294px -2px }
+#S150>.background { background-position: -336px -2px }
+#S175>.background { background-position: -378px -2px }
+#S180>.background { background-position: -84px -44px }
+#S200>.background { background-position: -126px -44px }
+#S215>.background { background-position: -168px -44px }
+#S225>.background { background-position: -210px -44px }
+#S250>.background { background-position: -252px -44px }
+#S251>.background { background-position: -294px -44px }
+#S270>.background { background-position: -336px -44px }
+#S300>.background { background-position: -378px -44px }
+#S305>.background { background-position: -0px -86px }
+#S330>.background { background-position: -42px -86px }
+#S375>.background { background-position: -84px -86px }
+#S400>.background { background-position: -126px -86px }
+#S435>.background { background-position: -168px -86px }
+#S460>.background { background-position: -210px -86px }
+#S500>.background { background-position: -252px -86px }
+#S545>.background { background-position: -294px -86px }
+#S590>.background { background-position: -336px -86px }
+#S1275>.background { background-position: -378px -86px }
+#S1450>.background { background-position: -0px -128px }
+#S1500>.background { background-position: -42px -128px }
+#S2875>.background { background-position: -84px -128px }
+#S3200>.background { background-position: -126px -128px }
+#S5125>.background { background-position: -168px -128px }
+#S5375>.background { background-position: -210px -128px }
+#S5625>.background { background-position: -252px -128px }
+#S5875>.background { background-position: -294px -128px }
+#C1>.background { background-position: -84px -170px }
+#C10>.background { background-position: -126px -170px }
+#C25>.background { background-position: -168px -170px }
+#C50>.background { background-position: -210px -170px }
+#C80>.background { background-position: -252px -170px }
+#C105>.background { background-position: -294px -170px }
+#C120>.background { background-position: -336px -170px }
+#C135>.background { background-position: -378px -170px }
+#C150>.background { background-position: -84px -212px }
+#C175>.background { background-position: -126px -212px }
+#C200>.background { background-position: -168px -212px }
+#C225>.background { background-position: -210px -212px }
+#C250>.background { background-position: -252px -212px }
+#C251>.background { background-position: -294px -212px }
+#C300>.background { background-position: -336px -212px }
+#C305>.background { background-position: -378px -212px }
+#C330>.background { background-position: -0px -254px }
+#C340>.background { background-position: -42px -254px }
+#C375>.background { background-position: -84px -254px }
+#C400>.background { background-position: -126px -254px }
+#C405>.background { background-position: -168px -254px }
+#C460>.background { background-position: -210px -254px }
+#C500>.background { background-position: -252px -254px }
+#C520>.background { background-position: -294px -254px }
+#C590>.background { background-position: -336px -254px }
+#C1300>.background { background-position: -378px -254px }
+#C1325>.background { background-position: -0px -296px }
+#C1500>.background { background-position: -42px -296px }
+#C3000>.background { background-position: -84px -296px }
+#C3100>.background { background-position: -126px -296px }
+#C5125>.background { background-position: -168px -296px }
+#C5375>.background { background-position: -210px -296px }
+#C5625>.background { background-position: -252px -296px }
+#C5875>.background { background-position: -294px -296px }
+#D1>.background { background-position: -84px -338px }
+#D10>.background { background-position: -126px -338px }
+#D25>.background { background-position: -168px -338px }
+#D50>.background { background-position: -210px -338px }
+#D55>.background { background-position: -252px -338px }
+#D135>.background { background-position: -294px -338px }
+#D150>.background { background-position: -336px -338px }
+#D175>.background { background-position: -378px -338px }
+#D200>.background { background-position: -84px -380px }
+#D205>.background { background-position: -126px -380px }
+#D225>.background { background-position: -168px -380px }
+#D245>.background { background-position: -210px -380px }
+#D250>.background { background-position: -252px -380px }
+#D260>.background { background-position: -294px -380px }
+#D275>.background { background-position: -336px -380px }
+#D290>.background { background-position: -378px -380px }
+#D320>.background { background-position: -0px -422px }
+#D330>.background { background-position: -42px -422px }
+#D350>.background { background-position: -84px -422px }
+#D400>.background { background-position: -126px -422px }
+#D435>.background { background-position: -168px -422px }
+#D480>.background { background-position: -210px -422px }
+#D525>.background { background-position: -252px -422px }
+#D560>.background { background-position: -294px -422px }
+#D590>.background { background-position: -336px -422px }
+#D1125>.background { background-position: -378px -422px }
+#D1275>.background { background-position: -0px -464px }
+#D1375>.background { background-position: -42px -464px }
+#D2775>.background { background-position: -84px -464px }
+#D3350>.background { background-position: -126px -464px }
+#D5125>.background { background-position: -168px -464px }
+#D5375>.background { background-position: -210px -464px }
+#D5625>.background { background-position: -252px -464px }
+#D5875>.background { background-position: -294px -464px }
+#E1>.background { background-position: -84px -506px }
+#E10>.background { background-position: -126px -506px }
+#E25>.background { background-position: -168px -506px }
+#E30>.background { background-position: -210px -506px }
+#E50>.background { background-position: -252px -506px }
+#E80>.background { background-position: -294px -506px }
+#E135>.background { background-position: -336px -506px }
+#E145>.background { background-position: -378px -506px }
+#E150>.background { background-position: -84px -548px }
+#E200>.background { background-position: -126px -548px }
+#E225>.background { background-position: -168px -548px }
+#E230>.background { background-position: -210px -548px }
+#E250>.background { background-position: -252px -548px }
+#E260>.background { background-position: -294px -548px }
+#E275>.background { background-position: -336px -548px }
+#E290>.background { background-position: -378px -548px }
+#E320>.background { background-position: -0px -590px }
+#E330>.background { background-position: -42px -590px }
+#E350>.background { background-position: -84px -590px }
+#E400>.background { background-position: -126px -590px }
+#E410>.background { background-position: -168px -590px }
+#E460>.background { background-position: -210px -590px }
+#E480>.background { background-position: -252px -590px }
+#E495>.background { background-position: -294px -590px }
+#E590>.background { background-position: -336px -590px }
+#E1225>.background { background-position: -378px -590px }
+#E1325>.background { background-position: -0px -632px }
+#E1425>.background { background-position: -42px -632px }
+#E3250>.background { background-position: -84px -632px }
+#E3300>.background { background-position: -126px -632px }
+#E5125>.background { background-position: -168px -632px }
+#E5375>.background { background-position: -210px -632px }
+#E5625>.background { background-position: -252px -632px }
+#E5875>.background { background-position: -294px -632px }
+#A1>.background { background-position: -84px -674px }
+#A10>.background { background-position: -126px -674px }
+#A25>.background { background-position: -168px -674px }
+#A30>.background { background-position: -210px -674px }
+#A50>.background { background-position: -252px -674px }
+#A55>.background { background-position: -294px -674px }
+#A105>.background { background-position: -336px -674px }
+#A120>.background { background-position: -378px -674px }
+#A135>.background { background-position: -84px -716px }
+#A150>.background { background-position: -126px -716px }
+#A175>.background { background-position: -168px -716px }
+#A200>.background { background-position: -210px -716px }
+#A250>.background { background-position: -252px -716px }
+#A251>.background { background-position: -294px -716px }
+#A270>.background { background-position: -336px -716px }
+#A300>.background { background-position: -378px -716px }
+#A305>.background { background-position: -0px -758px }
+#A330>.background { background-position: -42px -758px }
+#A375>.background { background-position: -84px -758px }
+#A400>.background { background-position: -126px -758px }
+#A410>.background { background-position: -168px -758px }
+#A480>.background { background-position: -210px -758px }
+#A495>.background { background-position: -252px -758px }
+#A545>.background { background-position: -294px -758px }
+#A590>.background { background-position: -336px -758px }
+#A1200>.background { background-position: -378px -758px }
+#A1325>.background { background-position: -0px -800px }
+#A1500>.background { background-position: -42px -800px }
+#A2950>.background { background-position: -84px -800px }
+#A3400>.background { background-position: -126px -800px }
+#A5125>.background { background-position: -168px -800px }
+#A5375>.background { background-position: -210px -800px }
+#A5625>.background { background-position: -252px -800px }
+#A5875>.background { background-position: -294px -800px }
+#W1>.background { background-position: -84px -842px }
+#W10>.background { background-position: -126px -842px }
+#W25>.background { background-position: -168px -842px }
+#W50>.background { background-position: -210px -842px }
+#W120>.background { background-position: -252px -842px }
+#W135>.background { background-position: -294px -842px }
+#W150>.background { background-position: -336px -842px }
+#W175>.background { background-position: -378px -842px }
+#W180>.background { background-position: -84px -884px }
+#W200>.background { background-position: -126px -884px }
+#W205>.background { background-position: -168px -884px }
+#W225>.background { background-position: -210px -884px }
+#W250>.background { background-position: -252px -884px }
+#W260>.background { background-position: -294px -884px }
+#W275>.background { background-position: -336px -884px }
+#W290>.background { background-position: -378px -884px }
+#W320>.background { background-position: -0px -926px }
+#W330>.background { background-position: -42px -926px }
+#W350>.background { background-position: -84px -926px }
+#W400>.background { background-position: -126px -926px }
+#W405>.background { background-position: -168px -926px }
+#W520>.background { background-position: -210px -926px }
+#W525>.background { background-position: -252px -926px }
+#W560>.background { background-position: -294px -926px }
+#W590>.background { background-position: -336px -926px }
+#W1275>.background { background-position: -378px -926px }
+#W1375>.background { background-position: -0px -968px }
+#W1400>.background { background-position: -42px -968px }
+#W3050>.background { background-position: -84px -968px }
+#W3150>.background { background-position: -126px -968px }
+#W5125>.background { background-position: -168px -968px }
+#W5375>.background { background-position: -210px -968px }
+#W5625>.background { background-position: -252px -968px }
+#W5875>.background { background-position: -294px -968px }
+#F5250>.background { background-position: -84px -1010px }
+#F5500>.background { background-position: -126px -1010px }
+#F5750>.background { background-position: -168px -1010px }
+#F6000>.background { background-position: -210px -1010px }
+
+.color-select,.color-select * {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.color-fr { background-color: #ff99ff }
+.color-el { background-color: #33cc33 }
+.color-an { background-color: #99ccff }
+.color-gb { background-color: #585800 }
+.color-ud { background-color: #3b0058 }
+.color-dm { background-color: #c00000 }
+.color-tt { background-color: #ffd966 }
+.color-dd { background-color: #833c0c }
+.color-fc { background-color: #6432c7 }
+.color-mc { background-color: #a8a8a8 }
+
+.align.good { color: blue }
+.align.evil { color: darkred }
+.align.neutral { color: darkgoldenrod }
+.align.order { color: mediumturquoise }
+.align.chaos { color: mediumpurple }
+.align.balance { color: gray }
+
+.debug { display: none; }

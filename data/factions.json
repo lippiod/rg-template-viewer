@@ -1,0 +1,194 @@
+{
+    "FR": {
+        "abbr": "FR",
+        "name": "Fairy",
+        "color": "color-fr",
+        "spell": "Fairy Chanting",
+        "unique": "Swarming Tower",
+        "slot": [ "S" ],
+        "align": [
+            "good",
+            "chaos"
+        ]
+    },
+    "EL": {
+        "abbr": "EL",
+        "name": "Elf",
+        "color": "color-el",
+        "spell": "Moon Blessing",
+        "unique": "Arboreal City",
+        "slot": [ "C" ],
+        "align": [
+            "good",
+            "balance"
+        ]
+    },
+    "AN": {
+        "abbr": "AN",
+        "name": "Angel",
+        "color": "color-an",
+        "spell": "God's Hand",
+        "unique": "Holy Site",
+        "slot": [ "D" ],
+        "align": [
+            "good",
+            "order"
+        ]
+    },
+    "GB": {
+        "abbr": "GB",
+        "name": "Goblin",
+        "color": "color-gb",
+        "spell": "Goblin's Greed",
+        "unique": "Slave Market",
+        "slot": [ "E" ],
+        "align": [
+            "evil",
+            "balance"
+        ]
+    },
+    "UD": {
+        "abbr": "UD",
+        "name": "Undead",
+        "color": "color-ud",
+        "spell": "Night Time",
+        "unique": "Flesh Workshop",
+        "slot": [ "A" ],
+        "align": [
+            "evil",
+            "order"
+        ]
+    },
+    "DM": {
+        "abbr": "DM",
+        "name": "Demon",
+        "color": "color-dm",
+        "spell": "Hellfire Blast",
+        "unique": "Burning Abyss",
+        "slot": [ "W" ],
+        "align": [
+            "evil",
+            "chaos"
+        ]
+    },
+    "TT": {
+        "abbr": "TT",
+        "name": "Titan",
+        "color": "color-tt",
+        "spell": "Lightning Strike",
+        "unique": "Mountain Palace",
+        "slot": [ "C", "W" ],
+        "align": [
+            "neutral",
+            "order"
+        ]
+    },
+    "DD": {
+        "abbr": "DD",
+        "name": "Druid",
+        "color": "color-dd",
+        "spell": "Grand Balance",
+        "unique": "Ziggurat",
+        "slot": [ "E", "A" ],
+        "align": [
+            "neutral",
+            "balance"
+        ]
+    },
+    "FC": {
+        "abbr": "FC",
+        "name": "Faceless",
+        "color": "color-fc",
+        "spell": "Brainwave",
+        "unique": "Forbidden Library",
+        "slot": [ "S", "D" ],
+        "align": [
+            "neutral",
+            "chaos"
+        ]
+    },
+    "DN": {
+        "abbr": "DN",
+        "name": "Dwarf",
+        "color": "color-dn",
+        "spell": "Diamond Pickaxe",
+        "unique": "High Bastion",
+        "slot": [ "C" ],
+        "align": [
+            "good",
+            ""
+        ]
+    },
+    "DW": {
+        "abbr": "DW",
+        "name": "Drow",
+        "color": "color-dw",
+        "spell": "Combo Strike",
+        "unique": "Brothel",
+        "slot": [ "W" ],
+        "align": [
+            "evil",
+            ""
+        ]
+    },
+    "DG": {
+        "abbr": "DG",
+        "name": "Dragon",
+        "color": "color-dg",
+        "spell": "Dragon's Breath",
+        "unique": "Dragon Pasture",
+        "slot": [ "" ],
+        "align": [
+            "neutral",
+            ""
+        ]
+    },
+    "AR": {
+        "abbr": "AR",
+        "name": "Archon",
+        "color": "color-ar",
+        "spell": "Precognition",
+        "unique": "",
+        "slot": [ "" ],
+        "align": [
+            "",
+            "order"
+        ]
+    },
+    "DJ": {
+        "abbr": "DJ",
+        "name": "Djinn",
+        "color": "color-dj",
+        "spell": "Limited Wish",
+        "unique": "",
+        "slot": [ "" ],
+        "align": [
+            "",
+            "chaos"
+        ]
+    },
+    "MK": {
+        "abbr": "MK",
+        "name": "Makers",
+        "color": "color-mk",
+        "spell": "Infinite Spiral",
+        "unique": "",
+        "slot": [ "" ],
+        "align": [
+            "",
+            "balance"
+        ]
+    },
+    "MC": {
+        "abbr": "MC",
+        "name": "Mercenary",
+        "color": "color-mc",
+        "spell": "",
+        "unique": "",
+        "slot": [ "" ],
+        "align": [
+            "",
+            ""
+        ]
+    }
+}
