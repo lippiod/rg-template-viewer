@@ -14,7 +14,7 @@
   <h1>Realm Grinder Template Viewer</h1>
   <div id="config-zone">
     <textarea style="display:block" id="template" rows="8" cols="50" v-model.lazy="templateText" placeholder="Enter template text here"></textarea>
-    <input type="button" value="import" @click="importBtn()">
+    <input type="button" value="import" @click="importBtn(true)">
     <input type="button" value="clear text" @click="clearBtn('string')">
     <input type="button" value="clear selection" @click="clearBtn('select')">
     <input type="button" value="export string" @click="exportBtn('string')">

@@ -455,7 +455,7 @@ function runApp() {
                 }
                 this.templateText = denseStr.slice(1);
             },
-            importBtn() {
+            importBtn(isHuman) {
                 let tempText = this.templateText;
                 let res = tempText.split(",").map(str => str.trim());
                 let asc = getAscension(this.rein);
@@ -517,6 +517,8 @@ function runApp() {
                         //console.log(`No matching string!! [${s}] on ${this.nawPage}: ${this.nawBuild}`);
                     }
                 }
+                if(!isHuman)
+                    this.exportBtn();
             },
             resChange(rId, checked, cat, cost) {
                 let rs = this.researchSlots[cat];
@@ -669,7 +671,7 @@ function runApp() {
                 }
                 this.nawBuildContent = buildContent;
                 if(this.nawBuild.length)
-                    this.importBtn();
+                    this.importBtn(false);
             },
             researchSlots: {
                 deep: true,
