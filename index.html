@@ -30,9 +30,11 @@
       </div>
       <div>
         <label for="naw-build">Build:</label>
-        <select id="naw-build" v-model="nawBuild">
+        <select id="naw-build" v-model="nawBuildId">
           <option value="" disabled>---Please select a build---</option>
-          <option v-for="(item, ind) in nawBuildList" :key="ind">{{ item }}</option>
+          <optgroup v-for="(cat, cId) in nawCategory" :key="cId" :label="cat.name">
+            <option v-for="(item, ind) in cat.buildList" :value="[cId, ind]" :key="ind">{{ item }}</option>
+          </optgroup>
         </select>
       </div>
       <div id="build-content" v-html="nawBuildHtml"></div>

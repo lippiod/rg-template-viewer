@@ -230,8 +230,7 @@ function runApp() {
             nawRchTree: {},
             nawSections: {},
             nawPage: '',
-            nawBuild: '',
-            nawBuildContent: { template: '', notes: [] },
+            nawBuildId: [],
             archonBlood: 'none',
             slotAdd: 1,
             hasBloodSpring: false,
@@ -259,36 +258,30 @@ function runApp() {
             nawPageList
         },
         computed: {
-            nawBuildList() {
+            nawCategory() {
                 if(!this.nawSections.hasOwnProperty(this.nawPage))
                     return [];
-                return $( '.shelementwhole>[onclick="shohid($(this));"]', this.nawSections[this.nawPage] ).map( (ind, val) => $( val ).text() ).get();
+
+                return $( '.rgtv-category', this.nawSections[this.nawPage] ).map(function() {
+                    let name = $( this ).children().first().text();
+                    let buildList = $( '.rgtv-build', this ).map(function() {
+                        return $( this ).children().first().text();
+                    }).get();
+                    return { name, buildList };
+                });
+            },
+            nawBuild() {
+                let category = $( '.rgtv-category', this.nawSections[this.nawPage] ).get(this.nawBuildId[0]);
+                return $( '.rgtv-build', category ).get(this.nawBuildId[1]);
             },
             nawBuildHtml() {
-                /*
-                let html = '';
-                if(this.nawBuild.length) {
-                    $.each(this.nawBuildContent, (key, val) => {
-                        if(key=='notes' || key=='template')
-                            return;
-                        html += `<p><b>${key}</b>: ${val}<p>`;
-                    });
-                    html += `<p>${this.nawBuildContent.template}</p>`
-                    $.each(this.nawBuildContent.notes, (key, val) => {
-                        html += `<p><b>Notes</b>: ${val}<p>`;
-                    });
+                if(this.nawBuildId !== undefined && this.nawBuildId.length > 0) {
+                    let desc = $( '.rgtv-desc', this.nawBuild ).html();
+                    let temp = $( '.rgtv-template', this.nawBuild ).html();
+                    let note = $( '.rgtv-notes', this.nawBuild ).html();
+                    return (desc ? desc : '') + (temp ? temp : '') + (note ? note : '');
                 }
-                return html;
-                */
-                if(this.nawBuild.length) {
-                    let selector = `p:contains(${this.nawBuild})+.autohide p`;
-                    let content = $( selector, this.nawSections[this.nawPage] ).not(":has(button)");
-                    let html = '';
-                    $( content ).each(function() {
-                        html += `<p>${$( this ).html()}</p>`;
-                    });
-                    return html;
-                }
+                return '';
             },
             mercTrigger() {
                 return {
@@ -511,10 +504,10 @@ function runApp() {
                                 console.log(`????? [${s}]`);
                             }
                         } else {
-                            console.log(`No matching research!! [${s}] on ${this.nawPage}: ${this.nawBuild}`);
+                            console.log(`No matching research!! [${s}] on ${this.nawPage}: ${this.nawCategory[this.nawBuildId[0]].buildList[this.nawBuildId[1]]}`);
                         }
                     } else {
-                        //console.log(`No matching string!! [${s}] on ${this.nawPage}: ${this.nawBuild}`);
+                        console.log(`No matching string!! [${s}] on ${this.nawPage}: ${this.nawCategory[this.nawBuildId[0]].buildList[this.nawBuildId[1]]}`);
                     }
                 }
                 if(!isHuman)
@@ -604,35 +597,24 @@ function runApp() {
                     this.elite = false;
             },
             nawPage() {
-                this.nawBuild = '';
+                this.nawBuildId = [];
             },
-            nawBuild() {
-                //console.log($( content ));
-                let buildContent = {
-                    template: '',
-                    notes: []
-                };
+            nawBuildId() {
                 this.imported = 0;
-                if(this.nawBuild.length) {
-                    let selector = `p:contains(${this.nawBuild})+.autohide p`;
-                    let content = $( selector, this.nawSections[this.nawPage] ).not(":has(button)");
+                if(this.nawBuildId !== undefined && this.nawBuildId.length > 0) {
                     this.clearBtn('select');
                     let rein = nawPageList[this.nawPage].max;
                     if(this.rein != rein) {
                         this.imported++;
                         this.rein = rein;
                     }
-                    $( content ).each((ind, val) => {
+                    $( '.rgtv-desc', this.nawBuild ).children().each((ind, val) => {
                         if($( val ).has( "b" ).length) {
                             let k = $( "b", val ).text();
                             let v = $( val ).contents().filter(function(){ 
                                 return this.nodeType == 3;
                             }).text().replace(/:/, '').trim();
 
-                            if(k.match(/notes/i))
-                                buildContent.notes.push(v);
-                            else
-                                buildContent[k] = v;
                             if(k.match(/faction/i)) {
                                 let f = v.match(regFName);
                                 //console.log(f);
@@ -663,15 +645,11 @@ function runApp() {
                                         this.mercUpgrades.lineage = getAbbr(v.match(regFName)[0]);
                                 }
                             }
-                        } else {
-                            buildContent.template += $( val ).text();
                         }
                     });
-                    this.templateText = buildContent.template;
-                }
-                this.nawBuildContent = buildContent;
-                if(this.nawBuild.length)
+                    this.templateText = $( '.rgtv-template', this.nawBuild ).text();
                     this.importBtn(false);
+                }
             },
             researchSlots: {
                 deep: true,
