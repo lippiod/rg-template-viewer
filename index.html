@@ -100,54 +100,51 @@
       </div>
     </div>
     <div class="config" v-show="showA3">
-      <p>{{ pointsUsed }} points used.<span v-show="pointsUsed-budgets>500"><br>Need <strong>{{ requiredTime }}</strong> spent this game with Archon bloodline (bloodline upgrade, A400, A2950, or D5875)</span></p>
-    </div>
-    <div style="margin:10px">
-      <p style="margin:5px" v-for="(item, key) in researchSlots" :key="key">{{ key }}: {{ researchSelected[key].cost }}<span v-show="showTotal"> / {{ item }}</span><span v-show="showA3"> / {{ budgets }}</span><span class="debug" v-for="(rch, k) in researchSelected[key].rch" :key="k"><br>{{ rch }},</span></p>
+      <p>{{ pointsUsed }} points used.<span v-show="pointsUsed>budgets"><br>Need <strong>{{ requiredTime }}</strong> spent this game with Archon bloodline (bloodline upgrade, A400, A2950, or D5875)</span></p>
     </div>
   </div>
   <a style="float:right;margin-bottom:10px" target="_blank" href="http://musicfamily.org/realm/Researchtree/">Research Tree Source</a>
   <div id="research-tree">
     <div class="research-branch">
-      <div id="Spellcraft" class="facility"></div>
+      <div id="Spellcraft" class="facility" @click="selectFree('Spellcraft')" v-tooltip="{ content: facTooltip.Spellcraft, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Spellcraft" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Spellcraft"></research>
+        <research v-for="item in rTreeData.Spellcraft" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Spellcraft"></research>
       </div>
     </div>
     <div class="research-branch">
-      <div id="Craftsmanship" class="facility"></div>
+      <div id="Craftsmanship" class="facility" @click="selectFree('Craftsmanship')" v-tooltip="{ content: facTooltip.Craftsmanship, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Craftsmanship" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Craftsmanship"></research>
+        <research v-for="item in rTreeData.Craftsmanship" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Craftsmanship"></research>
       </div>
     </div>
     <div class="research-branch">
-      <div id="Divine" class="facility"></div>
+      <div id="Divine" class="facility" @click="selectFree('Divine')" v-tooltip="{ content: facTooltip.Divine, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Divine" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Divine"></research>
+        <research v-for="item in rTreeData.Divine" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Divine"></research>
       </div>
     </div>
     <div class="research-branch">
-    <div id="Economics" class="facility"></div>
+    <div id="Economics" class="facility" @click="selectFree('Economics')" v-tooltip="{ content: facTooltip.Economics, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Economics" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Economics"></research>
+        <research v-for="item in rTreeData.Economics" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Economics"></research>
       </div>
     </div>
     <div class="research-branch">
-      <div id="Alchemy" class="facility"></div>
+      <div id="Alchemy" class="facility" @click="selectFree('Alchemy')" v-tooltip="{ content: facTooltip.Alchemy, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Alchemy" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Alchemy"></research>
+        <research v-for="item in rTreeData.Alchemy" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Alchemy"></research>
       </div>
     </div>
     <div class="research-branch">
-      <div id="Warfare" class="facility"></div>
+      <div id="Warfare" class="facility" @click="selectFree('Warfare')" v-tooltip="{ content: facTooltip.Warfare, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Warfare" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Warfare"></research>
+        <research v-for="item in rTreeData.Warfare" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Warfare"></research>
       </div>
     </div>
     <div class="research-branch" v-show="rein>=175">
-      <div id="Forbidden" class="facility"></div>
+      <div id="Forbidden" class="facility" v-tooltip="{ content: facTooltip.Forbidden, html: true }"></div>
       <div class="researches">
-        <research v-for="item in rTreeData.Forbidden" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" :rch-selected="researchSelected.Forbidden"></research>
+        <research v-for="item in rTreeData.Forbidden" :key="item.id" :rch-tooltip="nawRchTree[item.id]" v-bind="[item, mercTrigger]" :change="rchChange[item.id]" @change-done="changeDone" @res-change="resChange" @set-available="setAvailable" :rch-selected="researchSelected.Forbidden"></research>
       </div>
     </div>
   </div>

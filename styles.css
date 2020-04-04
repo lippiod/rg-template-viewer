@@ -354,8 +354,8 @@ label {
   background: black;
   color: white;
   max-width: 500px;
-  border-radius: 5px;
-  padding: 10px 10px 4px;
+  border-radius: 16px;
+  padding: 5px 10px 4px;
 }
 
 .tooltip .tooltip-arrow {

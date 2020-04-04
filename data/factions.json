@@ -2,6 +2,8 @@
     "FR": {
         "abbr": "FR",
         "name": "Fairy",
+        "prestige": "DN",
+        "elite": "DJ",
         "color": "color-fr",
         "spell": "Fairy Chanting",
         "unique": "Swarming Tower",
@@ -14,6 +16,8 @@
     "EL": {
         "abbr": "EL",
         "name": "Elf",
+        "prestige": "DN",
+        "elite": "MK",
         "color": "color-el",
         "spell": "Moon Blessing",
         "unique": "Arboreal City",
@@ -26,6 +30,8 @@
     "AN": {
         "abbr": "AN",
         "name": "Angel",
+        "prestige": "DN",
+        "elite": "AR",
         "color": "color-an",
         "spell": "God's Hand",
         "unique": "Holy Site",
@@ -38,6 +44,8 @@
     "GB": {
         "abbr": "GB",
         "name": "Goblin",
+        "prestige": "DW",
+        "elite": "MK",
         "color": "color-gb",
         "spell": "Goblin's Greed",
         "unique": "Slave Market",
@@ -50,6 +58,8 @@
     "UD": {
         "abbr": "UD",
         "name": "Undead",
+        "prestige": "DW",
+        "elite": "AR",
         "color": "color-ud",
         "spell": "Night Time",
         "unique": "Flesh Workshop",
@@ -62,6 +72,8 @@
     "DM": {
         "abbr": "DM",
         "name": "Demon",
+        "prestige": "DW",
+        "elite": "DJ",
         "color": "color-dm",
         "spell": "Hellfire Blast",
         "unique": "Burning Abyss",
@@ -74,6 +86,8 @@
     "TT": {
         "abbr": "TT",
         "name": "Titan",
+        "prestige": "DG",
+        "elite": "AR",
         "color": "color-tt",
         "spell": "Lightning Strike",
         "unique": "Mountain Palace",
@@ -86,6 +100,8 @@
     "DD": {
         "abbr": "DD",
         "name": "Druid",
+        "prestige": "DG",
+        "elite": "MK",
         "color": "color-dd",
         "spell": "Grand Balance",
         "unique": "Ziggurat",
@@ -98,6 +114,8 @@
     "FC": {
         "abbr": "FC",
         "name": "Faceless",
+        "prestige": "DG",
+        "elite": "DJ",
         "color": "color-fc",
         "spell": "Brainwave",
         "unique": "Forbidden Library",
@@ -110,6 +128,8 @@
     "DN": {
         "abbr": "DN",
         "name": "Dwarf",
+        "prestige": "",
+        "elite": "",
         "color": "color-dn",
         "spell": "Diamond Pickaxe",
         "unique": "High Bastion",
@@ -122,6 +142,8 @@
     "DW": {
         "abbr": "DW",
         "name": "Drow",
+        "prestige": "",
+        "elite": "",
         "color": "color-dw",
         "spell": "Combo Strike",
         "unique": "Brothel",
@@ -134,6 +156,8 @@
     "DG": {
         "abbr": "DG",
         "name": "Dragon",
+        "prestige": "",
+        "elite": "",
         "color": "color-dg",
         "spell": "Dragon's Breath",
         "unique": "Dragon Pasture",
@@ -146,6 +170,8 @@
     "AR": {
         "abbr": "AR",
         "name": "Archon",
+        "prestige": "",
+        "elite": "",
         "color": "color-ar",
         "spell": "Precognition",
         "unique": "",
@@ -158,6 +184,8 @@
     "DJ": {
         "abbr": "DJ",
         "name": "Djinn",
+        "prestige": "",
+        "elite": "",
         "color": "color-dj",
         "spell": "Limited Wish",
         "unique": "",
@@ -170,6 +198,8 @@
     "MK": {
         "abbr": "MK",
         "name": "Makers",
+        "prestige": "",
+        "elite": "",
         "color": "color-mk",
         "spell": "Infinite Spiral",
         "unique": "",
@@ -182,6 +212,8 @@
     "MC": {
         "abbr": "MC",
         "name": "Mercenary",
+        "prestige": "",
+        "elite": "",
         "color": "color-mc",
         "spell": "",
         "unique": "",

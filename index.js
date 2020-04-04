@@ -1,6 +1,6 @@
 'use strict'
 
-let rTreeData, factionList, factionGroups, nawPageList, rchChange={};
+let rTreeData, factionList, factionGroups, nawPageList, rchChange={}, rchAvailable={};
 let validText = [];
 const jsonTree = 'data/rtree.json';
 const jsonFactions = 'data/factions.json';
@@ -51,6 +51,7 @@ function getAbbr(faction, checkBase) {
     return "";
 }
 
+
 Vue.component('research', {
     props: ['cat', 'cost', 'id', 'req', 'change', 'rchTooltip', 'hasUB', 'hasUP', 'hasSP'],
     data() {
@@ -88,7 +89,7 @@ Vue.component('research', {
         available() {
             let asc = getAscension(this.$root.rein);
             let f = factionList[this.$root.faction];
-            if(this.$root.faction=="")
+            if(this.$root.faction===undefined || this.$root.faction=="")
                 return true;
             if(this.cost > this.$root.getRps)
                 return false;
@@ -102,7 +103,7 @@ Vue.component('research', {
                 if (this.req[0] == '~MC' ||
                     this.req[0] == '~neutral' && merc.align[0] == 'neutral')
                     return false;
-                if(factionGroups.aligns.hasOwnProperty(this.req[0]))
+                if(this.req[0].match(regA))
                     if(this.req[0] != merc.align[0] && this.req[0] != merc.align[1])
                         return false;
                 if(this.req[this.req.length-1] == ':UB') {
@@ -141,9 +142,9 @@ Vue.component('research', {
                         return false;
                 } else if(factionGroups.prestige.includes(req)) {
                     if(!this.$root.prestige ||
-                       factionList[req].align[0] != f.align[0])
+                       factionList[req].abbr != f.prestige)
                         return false;
-                } else if(factionGroups.aligns.hasOwnProperty(req)) {
+                } else if(req.match(regA)) {
                     if(req != f.align[0] && req != f.align[1])
                         return false;
                 } else {
@@ -174,6 +175,10 @@ Vue.component('research', {
                 this.$emit('res-change', this.id, this.checked, this.cat, this.cost);
             }
             this.$emit('change-done', this.id);
+        },
+        available(newVal, oldVal) {
+            if(newVal != oldVal)
+                this.$emit('set-available', this.id, newVal);
         }
     },
     template: '<div v-show="show" v-tooltip="{ content: rchTooltip, html: true }" :id="id" :class="[cat, {checked, enabled, available}]" @click="toggleResearch"><div class="background"></div><img src="img/OKSign.png" alt="V" class="sign ok-sign"><img src="img/NOSign.png" alt="X" class="sign no-sign"></div>'
@@ -206,6 +211,7 @@ $( document ).ready(function() {
                     $.each(val, function(i, v) {
                         validText.push(v.id);
                         rchChange[v.id] = false;
+                        rchAvailable[v.id] = true;
                     });
                 });
                 regU = new RegExp(strU);
@@ -237,6 +243,7 @@ function runApp() {
             archonBlood: 'none',
             slotAdd: 1,
             rchChange,
+            rchAvailable,
             researchSelected: {
                 Spellcraft: { cost: 0, rch: [] },
                 Craftsmanship: { cost: 0, rch: [] },
@@ -285,6 +292,29 @@ function runApp() {
                 }
                 return '';
             },
+            facTooltip() {
+                let asc = getAscension(this.rein);
+                let tooltip = {}
+                for(let key in this.researchSelected) {
+                    let curCost = this.researchSelected[key].cost;
+                    let maxCost = this.researchSlots[key];
+                    tooltip[key] = '';
+                    if(asc < 3) {
+                        if(key == 'Forbidden') continue;
+                        tooltip[key] = `Slots selected: ${curCost}`;
+                        if(maxCost > -1)
+                            tooltip[key] += ` / ${maxCost}`;
+                        if(asc == 2) {
+                            tooltip[key] += '<br>Click to select all free slots';
+                        }
+                    } else {
+                        tooltip[key] = `research points used: ${curCost}<br>budgets: ${this.budgets}`;
+                        if(curCost < this.budgets)
+                            tooltip[key] += `<br>available points: ${this.budgets - curCost}`;
+                    }
+                }
+                return tooltip;
+            },
             mercTrigger() {
                 return {
                     hasUB: this.researchSelected.Economics.rch.includes('E3300'),
@@ -310,9 +340,6 @@ function runApp() {
             hasBloodSpring() {
                 return this.researchSelected.Alchemy.rch.includes('A400');
             },
-            showTotal() {
-                return getAscension(this.rein) != 3 && this.faction.length;
-            },
             showA3() {
                 return getAscension(this.rein) == 3;
             },
@@ -323,12 +350,15 @@ function runApp() {
                 return Math.max(...Object.values(this.researchSelected).map(e => e.cost));
             },
             notOrder() {
-                return !factionGroups.aligns.order.includes(this.faction);
+                if(this.faction === undefined || this.faction == "")
+                    return true;
+                else
+                    return factionList[this.faction].align[1] != 'order';
             },
             requiredTime() {
                 let pts = this.pointsUsed - this.budgets - 500;
                 if(pts < 1)
-                    return '';
+                    return '0 second';
                 let sec = Math.ceil(Math.exp(Math.pow(10 * pts, 0.25)) - 1);
                 let day = Math.floor(sec / 86400);
                 let hour = Math.floor((sec - 86400 * day) / 3600);
@@ -341,7 +371,7 @@ function runApp() {
                 let rss = {};
                 for(let k in rDict)
                     rss[rDict[k]] = -1;
-                if(this.faction=="")
+                if(this.faction===undefined || this.faction=="")
                     return rss;
 
                 let r = this.rein;
@@ -350,8 +380,8 @@ function runApp() {
                 if(r<16)
                     return rss;
                 if(asc < 2) {
-                    let isNeutral = factionGroups.aligns.neutral.includes(this.faction);
-                    let isGood = factionGroups.aligns.good.includes(this.faction);
+                    let isNeutral = factionList[this.faction].align[0] == 'neutral';
+                    let isGood = factionList[this.faction].align[0] == 'good';
                     for(let [key, val] of Object.entries(rDict)) {
                         rss[val] = key != 'F' ? 4 : 0;
 
@@ -388,7 +418,7 @@ function runApp() {
                 return rss;
             },
             colorSelected() {
-                if(this.faction=="")
+                if(this.faction===undefined || this.faction=="")
                     return "";
                 return factionList[this.faction].color;
             },
@@ -556,6 +586,18 @@ function runApp() {
                     this.rchChange[rId] = false;
                 else
                     console.log("WHY????!!!!!");
+            },
+            setAvailable(rId, val) {
+                this.rchAvailable[rId] = val;
+            },
+            selectFree(cat) {
+                if(getAscension(this.rein) != 2 || this.faction === undefined || this.faction == "")
+                    return;
+                for(let rch of rTreeData[cat]) {
+                    let selected = this.researchSelected[cat].rch.includes(rch.id);
+                    if(rch.free && !selected && this.rchAvailable[rch.id])
+                        this.resChange(rch.id, true, cat, rch.cost);
+                }
             }
         },
         watch: {
@@ -636,10 +678,10 @@ function runApp() {
                                     this.faction = getAbbr(f[0]);
                                     let p = nawPageList[this.nawPage].prestige;
                                     let a = this.nawPage=='R40-R46';
-                                    let n = factionGroups.aligns.neutral.includes(this.faction);
+                                    let n = factionList[this.faction].align[0] == 'neutral';
                                     this.prestige = !a && p || a && !n;
                                     this.elite = this.rein >= 130;
-                                    if(factionGroups.aligns.order.includes(this.faction) && this.elite)
+                                    if(factionList[this.faction].align[1] == 'order' && this.elite)
                                         this.archonBlood = 'A400';
                                 }
                             } else if(k.match(/bloodline/i)) {
@@ -710,7 +752,7 @@ function runApp() {
         }).map(function () {
             let rch = $( this ).attr( "research" ).match(regR)[0];
             if(validText.includes(rch)) {
-                return { name: rch, str: $( this ).attr( "research" )};
+                return { name: rch, str: $( this ).attr( "research" ) };
             }
         }).get();
         let nawRchTree = {};
