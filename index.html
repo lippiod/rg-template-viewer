@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="config" v-show="showA3">
-      <p>{{ pointsUsed }} points used.<span v-show="pointsUsed-budgets>500"><br>Need {{ requiredTime }} spent this game with Archon bloodline (bloodline upgrade, A400, A2950, or D5875)</span></p>
+      <p>{{ pointsUsed }} points used.<span v-show="pointsUsed-budgets>500"><br>Need <strong>{{ requiredTime }}</strong> spent this game with Archon bloodline (bloodline upgrade, A400, A2950, or D5875)</span></p>
     </div>
     <div style="margin:10px">
       <p style="margin:5px" v-for="(item, key) in researchSlots" :key="key">{{ key }}: {{ researchSelected[key].cost }}<span v-show="showTotal"> / {{ item }}</span><span v-show="showA3"> / {{ budgets }}</span><span class="debug" v-for="(rch, k) in researchSelected[key].rch" :key="k"><br>{{ rch }},</span></p>

@@ -236,7 +236,6 @@ function runApp() {
             nawBuildId: [],
             archonBlood: 'none',
             slotAdd: 1,
-            hasBloodSpring: false,
             rchChange,
             researchSelected: {
                 Spellcraft: { cost: 0, rch: [] },
@@ -307,6 +306,9 @@ function runApp() {
             },
             hasAncientDevice() {
                 return this.faction != 'MC';
+            },
+            hasBloodSpring() {
+                return this.researchSelected.Alchemy.rch.includes('A400');
             },
             showTotal() {
                 return getAscension(this.rein) != 3 && this.faction.length;
@@ -547,8 +549,6 @@ function runApp() {
                         rSel.cost -= cost;
                     }
                 }
-                if(rId == 'A400')
-                    this.hasBloodSpring = checked;
                 this.rchChange[rId] = true;
             },
             changeDone(rId) {
@@ -652,7 +652,15 @@ function runApp() {
                             }
                         }
                     });
-                    this.templateText = $( '.rgtv-template', this.nawBuild ).text();
+                    this.templateText = $( '.rgtv-template', this.nawBuild ).children().map(function() {
+                        let s = $( this ).text();
+                        if(s.match(/archon/i)) {
+                            let s_arr = s.split(/[ ,]/).filter(w => validText.includes(w));
+                            return ',' + s_arr.join(',');
+                        } else {
+                            return s;
+                        }
+                    }).get().join('');
                     this.importBtn(false);
                 }
             },
@@ -663,16 +671,25 @@ function runApp() {
                         let budgets = this.researchSlots[key];
                         let rs = this.researchSelected[key];
                         let asc = getAscension(this.rein);
+                        let freeSlots = [];
                         while(budgets > -1 && budgets < rs.cost) {
                             let rch = rs.rch.pop();
-                            if(asc < 2)
+                            let oldCost = rs.cost;
+                            if(asc < 2) {
                                 rs.cost--;
-                            else if(asc == 2)
-                                if(!rTreeData[rDict[rch[0]]].find(e => e.id == rch).free)
+                            } else if(asc == 2) {
+                                if(rTreeData[rDict[rch[0]]].find(e => e.id == rch).free)
+                                    freeSlots.push(rch);
+                                else
                                     rs.cost--;
-                            else
+                            } else {
                                 rs.cost -= parseInt(rch.slice(1));
+                            }
+                            if(oldCost > rs.cost)
+                                this.rchChange[rch] = true;
                         }
+                        for(let rch of freeSlots)
+                            rs.rch.push(rch);
                     }
                 }
             }
