@@ -115,6 +115,8 @@ Vue.component('research', {
                         return false;
                 }
                 if(this.req[1] == ':SP') {
+                    if(merc.lineage == this.req[0])
+                        return true;
                     if(!this.hasSP)
                         return false;
                     if(!merc.spells.includes(`SP:${factionList[this.req[0]].spell}`))
@@ -168,6 +170,7 @@ Vue.component('research', {
             this.checked = rchSelected.includes(this.id);
             if(this.checked && !this.available) {
                 this.checked = !this.checked;
+                console.log(`[${this.id}] not available!!`)
                 this.$emit('res-change', this.id, this.checked, this.cat, this.cost);
             }
             this.$emit('change-done', this.id);
@@ -453,6 +456,8 @@ function runApp() {
                 let res = tempText.split(",").map(str => str.trim());
                 let asc = getAscension(this.rein);
                 let merc = this.mercUpgrades;
+                let buildStr = isHuman ? '' : ` on /${this.nawPage}/: ${this.nawCategory[this.nawBuildId[0]].buildList[this.nawBuildId[1]]}`;
+
                 for(let s of res) {
                     if(regF.test(s)) {
                         //console.log(`Faction upgrade [${s}]`);
@@ -504,10 +509,10 @@ function runApp() {
                                 console.log(`????? [${s}]`);
                             }
                         } else {
-                            console.log(`No matching research!! [${s}] on ${this.nawPage}: ${this.nawCategory[this.nawBuildId[0]].buildList[this.nawBuildId[1]]}`);
+                            console.log(`No matching research!! [${s}] ${buildStr}`);
                         }
                     } else {
-                        console.log(`No matching string!! [${s}] on ${this.nawPage}: ${this.nawCategory[this.nawBuildId[0]].buildList[this.nawBuildId[1]]}`);
+                        console.log(`No matching string!! [${s}] ${buildStr}`);
                     }
                 }
                 if(!isHuman)
