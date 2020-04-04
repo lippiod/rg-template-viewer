@@ -103,7 +103,7 @@ Vue.component('research', {
                 if (this.req[0] == '~MC' ||
                     this.req[0] == '~neutral' && merc.align[0] == 'neutral')
                     return false;
-                if(this.req[0].match(regA))
+                if(this.req[0] != '~neutral' && this.req[0].match(regA))
                     if(this.req[0] != merc.align[0] && this.req[0] != merc.align[1])
                         return false;
                 if(this.req[this.req.length-1] == ':UB') {
@@ -234,6 +234,8 @@ function runApp() {
             faction: '',
             prestige: false,
             elite: false,
+            checkFlameHorn: false,
+            checkAncientDevice: false,
             templateText: '',
             imported: 0,
             nawRchTree: {},
@@ -277,7 +279,7 @@ function runApp() {
                         return $( this ).children().first().text();
                     }).get();
                     return { name, buildList };
-                });
+                }).get();
             },
             nawBuild() {
                 let category = $( '.rgtv-category', this.nawSections[this.nawPage] ).get(this.nawBuildId[0]);
@@ -332,10 +334,16 @@ function runApp() {
                 return this.nawPage.length ? nawPageList[this.nawPage].max : 190;
             },
             hasFlameHorn() {
-                return this.faction != 'MC';
+                if(this.rein >= 29 && this.rein < 40)
+                    return this.checkFlameHorn;
+                else
+                    return this.faction != 'MC';
             },
             hasAncientDevice() {
-                return this.faction != 'MC';
+                if(this.rein >= 23 && this.rein < 40)
+                    return this.checkAncientDevice;
+                else
+                    return this.faction != 'MC';
             },
             hasBloodSpring() {
                 return this.researchSelected.Alchemy.rch.includes('A400');
@@ -605,10 +613,6 @@ function runApp() {
                 let newA = getAscension(newR);
                 let oldA = getAscension(oldR);
                 if(newA == oldA) {
-                    if(newR < this.rMin)
-                        this.rein = this.rMin;
-                    if(newR > this.rMax)
-                        this.rein = this.rMax;
                     if(this.imported > 0)
                         this.imported--;
                     return;
@@ -650,11 +654,29 @@ function runApp() {
                 this.imported = 0;
                 if(this.nawBuildId !== undefined && this.nawBuildId.length > 0) {
                     this.clearBtn('select');
-                    let rein = nawPageList[this.nawPage].max;
+                    let rein = this.rMax;
+                    let category = this.nawCategory[this.nawBuildId[0]];
+                    let buildName = category.buildList[this.nawBuildId[1]];
+                    let rString = buildName.match(/[^A]R([0-9]+)/) || category.name.match(/[^A]R([0-9]+)/);
+                    if(rString) {
+                        rein = parseInt(rString[1]);
+                        if(rein > this.rMax) {
+                            console.log(`R number out of range!! current [${rein}], max [${this.rMax}]`);
+                            rein = this.rMax;
+                        }
+                        if(rein < this.rMin) {
+                            console.log(`R number out of range!! current [${rein}], min [${this.rMin}]`);
+                            rein = this.rMin;
+                        }
+                    } else {
+                        console.log(`No R number found in [${category.buildList[this.nawBuildId[1]]}]`);
+                    }
                     if(this.rein != rein) {
                         this.imported++;
                         this.rein = rein;
                     }
+                    this.checkAncientDevice = inRange(this.rein, 'ResearchBuilds');
+                    this.checkFlameHorn = false;
                     $( '.rgtv-desc', this.nawBuild ).children().each((ind, val) => {
                         if($( val ).has( "b" ).length) {
                             let k = $( "b", val ).text();

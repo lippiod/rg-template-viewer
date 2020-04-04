@@ -64,6 +64,14 @@
           <input type="checkbox" id="elite" v-model="elite">
           <label for="elite">elite</label>
         </div>
+        <div class="config" v-show="rein>=23 && rein<40">
+          <input type="checkbox" id="has-ancient-device" v-model="checkAncientDevice">
+          <label for="has-ancient-device">Ancient Device</label>
+        </div>
+        <div class="config" v-show="rein>=29 && rein<40">
+          <input type="checkbox" id="has-flame-horn" v-model="checkFlameHorn">
+          <label for="has-flame-horn">Horn of the Kings / Flame of Bondelnar</label>
+        </div>
         <div class="config">
           <div v-show="faction=='MC'">
             <div>
