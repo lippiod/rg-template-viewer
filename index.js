@@ -498,6 +498,8 @@ function runApp() {
                 let merc = this.mercUpgrades;
                 let buildStr = isHuman ? '' : ` on /${this.nawPage}/: ${this.nawCategory[this.nawBuildId[0]].buildList[this.nawBuildId[1]]}`;
 
+                if(res == '')
+                    return;
                 for(let s of res) {
                     if(regF.test(s)) {
                         //console.log(`Faction upgrade [${s}]`);
@@ -657,9 +659,14 @@ function runApp() {
                     let rein = this.rMax;
                     let category = this.nawCategory[this.nawBuildId[0]];
                     let buildName = category.buildList[this.nawBuildId[1]];
-                    let rString = buildName.match(/[^A]R([0-9]+)/) || category.name.match(/[^A]R([0-9]+)/);
+                    let rString = buildName.match(/[^A]?R([0-9]+)/) || category.name.match(/[^A]?R([0-9]+)/) || buildName.match(/(Archon|Djinn|Makers) Challenge ([12345])/);
                     if(rString) {
-                        rein = parseInt(rString[1]);
+                        if(rString[1].match(/Archon|Djinn|Makers/)) {
+                            let ch = parseInt(rString[2]);
+                            rein = 131 + 4 * ch + (ch > 3 ? ch - 3 : 0);
+                        } else {
+                            rein = parseInt(rString[1]);
+                        }
                         if(rein > this.rMax) {
                             console.log(`R number out of range!! current [${rein}], max [${this.rMax}]`);
                             rein = this.rMax;
