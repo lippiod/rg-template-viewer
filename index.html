@@ -4,9 +4,14 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/v-tooltip"></script>
+
+
   <title>Realm Grinder Template Viewer</title>
+  <meta property="og:title" content="Realm Grinder Template Viewer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lippiod.github.io/rg-template-viewer/" />
 </head>
 
 
@@ -14,11 +19,45 @@
   <h1>Realm Grinder Template Viewer</h1>
   <div id="config-zone">
     <textarea style="display:block" id="template" rows="8" cols="50" v-model.lazy="templateText" placeholder="Enter template text here"></textarea>
-    <input type="button" value="import" @click="importBtn(true)">
-    <input type="button" value="clear text" @click="clearBtn('string')">
-    <input type="button" value="clear selection" @click="clearBtn('select')">
-    <input type="button" value="export string" @click="exportBtn('string')">
-    <div class="config-section">
+    <button type="button" @click="importBtn(true)">import</button>
+    <button type="button" @click="exportBtn(true)">export</button>
+    <button type="button" @click="clearBtn('string')">clear text</button>
+    <button type="button" @click="clearBtn('select')">clear selection</button>
+    <!--<v-popover>
+      <button class="tooltip-target b3" auto-hide>generate html</button>
+      <template slot="popover">
+        <form>
+          <button type="button" @click="resetForm">Reset to default</button>
+          <button type="button" @click="exportBtn(false)">Preview html</button>
+          <div>
+            <p><strong>Build name</strong></p>
+            <p></p>
+            <input class="form-long" v-model="outputHtml.name">
+          </div>
+          <div>
+            <p><strong>Build info</strong></p>
+            <p></p>
+            <div v-for="(item, ind) in outputHtml.desc" :key="ind">
+              <button type="button" @click="addRow('desc', ind)">+</button>
+              <button type="button" @click="delRow('desc', ind)">-</button>
+              <input class="form-left" v-model="item.name">:
+              <input class="form-right" v-model="item.value">
+            </div>
+          </div>
+          <div>
+            <p><strong>Build notes</strong></p>
+            <p></p>
+            <div v-for="(item, ind) in outputHtml.note" :key="ind">
+              <button type="button" @click="addRow('note', ind)">+</button>
+              <button type="button" @click="delRow('note', ind)">-</button>
+              <input class="form-left" v-model="item.name">:
+              <input class="form-right" v-model="item.value">
+            </div>
+          </div>
+        </form>
+      </template>
+    </v-popover>-->
+    <!--<div class="config-section">
       <h3>Import build from <a target="_blank" href="http://musicfamily.org/realm/">Not a Wiki</a>:</h3>
       <div class="text-container">
         <div class="config">
@@ -38,16 +77,12 @@
             </optgroup>
           </select>
         </div>
-        <div id="build-content" v-html="nawBuildHtml"></div>
+        <div id="build-content" v-html="buildHtml"></div>
       </div>
-    </div>
+    </div>-->
     <div class="config-section">
       <h3>Configuration</h3>
       <div class="text-container">
-        <div class="config">
-          <input type="checkbox" id="hide-research" v-model="hideResearch">
-          <label for="hide-research">hide unavailable researches</label>
-        </div>
         <div class="config">
           <label for="reincarnation">Reincarnation:</label>
           <input type="number" min="16" max="190" id="reincarnation" v-model.lazy.number="rein">
@@ -96,14 +131,12 @@
         </div>
         <div class="config">
           <div v-show="rein>=130 && rein<160 && faction.length">
-            <span>Archon bloodline through:</span>
+            <span>Archon bloodline:</span>
             <input type="radio" id="ar-blood" value="bloodline" v-model="archonBlood">
-            <label for="ar-blood">bloodline</label>
-            <input type="radio" id="ar-rch" value="A400" v-model="archonBlood" :disabled="notOrder">
-            <label for="ar-rch">A400</label>
-            <input type="radio" id="ar-none" value="none" v-model="archonBlood">
-            <label for="ar-none">none</label><br>
-            <div v-show="archonBlood!='none'">
+            <label for="ar-blood">Yes</label>
+            <input type="radio" id="ar-rch" value="A400" v-model="archonBlood">
+            <label for="ar-rch">{{ isArchon400 ? 'A400' : 'No' }}</label>
+            <div v-show="archonBlood=='bloodline' || hasBloodSpring && isArchon400">
               <span>Effect:</span>
               <input type="number" min="1" max="100" v-model.lazy.number="slotAdd" style="width:40px">
               <span>additional slots.</span>
@@ -117,9 +150,41 @@
       </div>
     </div>
   </div>
-  <a style="float:right;margin-bottom:10px" target="_blank" href="http://musicfamily.org/realm/Researchtree/">Research Tree Source</a>
+  <div style="float:right;margin-bottom:10px">
+    <a target="_blank" href="http://musicfamily.org/realm/FactionUpgrades/">Faction Upgrades</a>
+    <a target="_blank" href="http://musicfamily.org/realm/Researchtree/">Research Tree</a>
+  </div>
   <div class="container">
-    <div id="research-tree">
+    <h3 class="accordion" @click="unfoldUpgrade = !unfoldUpgrade">Faction Upgrades<span  class="tri-symbol">{{ unfoldUpgrade ? "▲" : "▼" }} </span></h3>
+    <div id="upgrade-panel" v-show="unfoldUpgrade">
+      <div class="config" v-show="faction=='MC'">
+        <input type="radio" id="upg-all" value="0" v-model="upgradeDisplay">
+        <label for="upg-all">All</label>
+        <input type="radio" id="upg-t1" value="1" v-model="upgradeDisplay">
+        <label for="upg-t1">Tier 1</label>
+        <input type="radio" id="upg-t2" value="2" v-model="upgradeDisplay">
+        <label for="upg-t2">Tier 2</label>
+        <input type="radio" id="upg-t3" value="3" v-model="upgradeDisplay">
+        <label for="upg-t3">Tier 3</label>
+        <input type="radio" id="upg-t4" value="4" v-model="upgradeDisplay">
+        <label for="upg-t4">Tier 4</label><br>
+        <input type="radio" id="upg-good" value="5" v-model="upgradeDisplay">
+        <label for="upg-good">Good</label>
+        <input type="radio" id="upg-evil" value="6" v-model="upgradeDisplay">
+        <label for="upg-evil">Evil</label>
+        <input type="radio" id="upg-sel" value="7" v-model="upgradeDisplay">
+        <label for="upg-sel">Selected</label>
+      </div>
+      <div class="fac-upgrades">
+        <upgrade v-for="(item, key) in nawFacUpg" :key="key" :upg-tooltip="item" :id="key"  :disp="upgradeDisplay"></upgrade>
+      </div>
+    </div>
+    <h3 class="accordion" @click="unfoldRtree = !unfoldRtree">Research Tree<span class="tri-symbol">{{ unfoldRtree ? "▲" : "▼" }} </span></h3>
+    <div id="research-tree" v-show="unfoldRtree">
+      <div class="config">
+        <input type="checkbox" id="hide-research" v-model="hideResearch">
+        <label for="hide-research">hide unavailable researches</label>
+      </div>
       <div class="research-branch">
         <div id="Spellcraft" class="facility" @click="selectFree('Spellcraft')" v-tooltip="{ content: facTooltip.Spellcraft, html: true }"></div>
         <div class="researches">
@@ -163,8 +228,11 @@
         </div>
       </div>
     </div>
+    
   </div>
 </div>
+
+
 
 <script src="index.js"></script>
 

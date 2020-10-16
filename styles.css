@@ -30,23 +30,43 @@ h3 {
     overflow: auto;
     line-height: normal;
 }
-#build-content>p {
+#build-content p {
     margin-top: 2px;
     margin-bottom: 5px;
 }
 
 .container {
-    margin-bottom: 30px;
+    padding-bottom: 20px;
     width: 460px;
     max-height: 80vh;
+    position: relative;
     overflow: auto;
     float: right;
+    color:white;
     background-color: black;
+}
+
+.accordion {
+    padding-left: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+    user-select: none;
+    touch-action: pan-x pan-y;
+}
+.tri-symbol {
+    position: absolute;
+    float: right;
+    left: 420px;
 }
 
 #research-tree {
     padding: 10px;
     width: 420px;
+}
+
+#upgrade-panel {
+    padding: 10px;
+    max-width: 360px;
 }
 
 .config {
@@ -81,10 +101,25 @@ h3 {
     background-image: url('img/Research Tree.png');
 }
 
+.fac-upgrades > div {
+    border: 0px;
+    margin: 3px;
+    width: 54px;
+    height: 54px;
+    position: relative;
+    display: inline-block;
+}
+
 .background {
     width: 100%;
     height: 100%;
     background-image: url('img/Research Tree.png');
+}
+
+.fac-background {
+    width: 100%;
+    height: 100%;
+    background-image: url('img/Faction Upgrades.png');
 }
 
 .researches>.available.enabled:not(.checked):hover {
@@ -100,10 +135,18 @@ h3 {
     right: 0;
     bottom: 0;
     height: 40%;
+    width: 40%;
+    background-size: cover;
     user-select: none;
     touch-action: none;
 }
 
+.sign.ok-sign {
+    background-image: url('img/OKSign.png');
+}
+.sign.no-sign {
+    background-image: url('img/NOSign.png');
+}
 .researches>.checked>.ok-sign {
     display: block;
 }
@@ -113,6 +156,15 @@ h3 {
 
 label {
     user-select: none;
+}
+.form-long {
+    width: 100%;
+}
+.form-left {
+    width: 100px;
+}
+.form-right {
+    width: auto;
 }
 
 #Spellcraft { background-position: -2px -3px }
@@ -355,113 +407,296 @@ label {
 .align.chaos { color: mediumpurple }
 .align.balance { color: gray }
 
+#FR1>.fac-background { background-position: -123px -3px }
+#FR2>.fac-background { background-position: -183px -3px }
+#FR3>.fac-background { background-position: -243px -3px }
+#FR4>.fac-background { background-position: -303px -3px }
+#FR5>.fac-background { background-position: -363px -3px }
+#FR6>.fac-background { background-position: -3px -63px }
+#FR7>.fac-background { background-position: -63px -63px }
+#FR8>.fac-background { background-position: -123px -63px }
+#FR9>.fac-background { background-position: -183px -63px }
+#FR10>.fac-background { background-position: -243px -63px }
+#FR11>.fac-background { background-position: -303px -63px }
+#FR12>.fac-background { background-position: -363px -63px }
+#EL1>.fac-background { background-position: -123px -123px }
+#EL2>.fac-background { background-position: -183px -123px }
+#EL3>.fac-background { background-position: -243px -123px }
+#EL4>.fac-background { background-position: -303px -123px }
+#EL5>.fac-background { background-position: -363px -123px }
+#EL6>.fac-background { background-position: -3px -183px }
+#EL7>.fac-background { background-position: -63px -183px }
+#EL8>.fac-background { background-position: -123px -183px }
+#EL9>.fac-background { background-position: -183px -183px }
+#EL10>.fac-background { background-position: -243px -183px }
+#EL11>.fac-background { background-position: -303px -183px }
+#EL12>.fac-background { background-position: -363px -183px }
+#AN1>.fac-background { background-position: -123px -243px }
+#AN2>.fac-background { background-position: -183px -243px }
+#AN3>.fac-background { background-position: -243px -243px }
+#AN4>.fac-background { background-position: -303px -243px }
+#AN5>.fac-background { background-position: -363px -243px }
+#AN6>.fac-background { background-position: -3px -303px }
+#AN7>.fac-background { background-position: -63px -303px }
+#AN8>.fac-background { background-position: -123px -303px }
+#AN9>.fac-background { background-position: -183px -303px }
+#AN10>.fac-background { background-position: -243px -303px }
+#AN11>.fac-background { background-position: -303px -303px }
+#AN12>.fac-background { background-position: -363px -303px }
+#GB1>.fac-background { background-position: -123px -363px }
+#GB2>.fac-background { background-position: -183px -363px }
+#GB3>.fac-background { background-position: -243px -363px }
+#GB4>.fac-background { background-position: -303px -363px }
+#GB5>.fac-background { background-position: -363px -363px }
+#GB6>.fac-background { background-position: -3px -423px }
+#GB7>.fac-background { background-position: -63px -423px }
+#GB8>.fac-background { background-position: -123px -423px }
+#GB9>.fac-background { background-position: -183px -423px }
+#GB10>.fac-background { background-position: -243px -423px }
+#GB11>.fac-background { background-position: -303px -423px }
+#GB12>.fac-background { background-position: -363px -423px }
+#UD1>.fac-background { background-position: -123px -483px }
+#UD2>.fac-background { background-position: -183px -483px }
+#UD3>.fac-background { background-position: -243px -483px }
+#UD4>.fac-background { background-position: -303px -483px }
+#UD5>.fac-background { background-position: -363px -483px }
+#UD6>.fac-background { background-position: -3px -543px }
+#UD7>.fac-background { background-position: -63px -543px }
+#UD8>.fac-background { background-position: -123px -543px }
+#UD9>.fac-background { background-position: -183px -543px }
+#UD10>.fac-background { background-position: -243px -543px }
+#UD11>.fac-background { background-position: -303px -543px }
+#UD12>.fac-background { background-position: -363px -543px }
+#DM1>.fac-background { background-position: -123px -603px }
+#DM2>.fac-background { background-position: -183px -603px }
+#DM3>.fac-background { background-position: -243px -603px }
+#DM4>.fac-background { background-position: -303px -603px }
+#DM5>.fac-background { background-position: -363px -603px }
+#DM6>.fac-background { background-position: -3px -663px }
+#DM7>.fac-background { background-position: -63px -663px }
+#DM8>.fac-background { background-position: -123px -663px }
+#DM9>.fac-background { background-position: -183px -663px }
+#DM10>.fac-background { background-position: -243px -663px }
+#DM11>.fac-background { background-position: -303px -663px }
+#DM12>.fac-background { background-position: -363px -663px }
+#TT1>.fac-background { background-position: -123px -723px }
+#TT2>.fac-background { background-position: -183px -723px }
+#TT3>.fac-background { background-position: -243px -723px }
+#TT4>.fac-background { background-position: -303px -723px }
+#TT5>.fac-background { background-position: -363px -723px }
+#TT6>.fac-background { background-position: -3px -783px }
+#TT7>.fac-background { background-position: -63px -783px }
+#TT8>.fac-background { background-position: -123px -783px }
+#TT9>.fac-background { background-position: -183px -783px }
+#TT10>.fac-background { background-position: -243px -783px }
+#TT11>.fac-background { background-position: -303px -783px }
+#TT12>.fac-background { background-position: -363px -783px }
+#DD1>.fac-background { background-position: -123px -843px }
+#DD2>.fac-background { background-position: -183px -843px }
+#DD3>.fac-background { background-position: -243px -843px }
+#DD4>.fac-background { background-position: -303px -843px }
+#DD5>.fac-background { background-position: -363px -843px }
+#DD6>.fac-background { background-position: -3px -903px }
+#DD7>.fac-background { background-position: -63px -903px }
+#DD8>.fac-background { background-position: -123px -903px }
+#DD9>.fac-background { background-position: -183px -903px }
+#DD10>.fac-background { background-position: -243px -903px }
+#DD11>.fac-background { background-position: -303px -903px }
+#DD12>.fac-background { background-position: -363px -903px }
+#FC1>.fac-background { background-position: -123px -963px }
+#FC2>.fac-background { background-position: -183px -963px }
+#FC3>.fac-background { background-position: -243px -963px }
+#FC4>.fac-background { background-position: -303px -963px }
+#FC5>.fac-background { background-position: -363px -963px }
+#FC6>.fac-background { background-position: -3px -1023px }
+#FC7>.fac-background { background-position: -63px -1023px }
+#FC8>.fac-background { background-position: -123px -1023px }
+#FC9>.fac-background { background-position: -183px -1023px }
+#FC10>.fac-background { background-position: -243px -1023px }
+#FC11>.fac-background { background-position: -303px -1023px }
+#FC12>.fac-background { background-position: -363px -1023px }
+#DN1>.fac-background { background-position: -123px -1083px }
+#DN2>.fac-background { background-position: -183px -1083px }
+#DN3>.fac-background { background-position: -243px -1083px }
+#DN4>.fac-background { background-position: -303px -1083px }
+#DN5>.fac-background { background-position: -363px -1083px }
+#DN6>.fac-background { background-position: -3px -1143px }
+#DN7>.fac-background { background-position: -63px -1143px }
+#DN8>.fac-background { background-position: -123px -1143px }
+#DN9>.fac-background { background-position: -183px -1143px }
+#DN10>.fac-background { background-position: -243px -1143px }
+#DN11>.fac-background { background-position: -303px -1143px }
+#DN12>.fac-background { background-position: -363px -1143px }
+#DW1>.fac-background { background-position: -123px -1203px }
+#DW2>.fac-background { background-position: -183px -1203px }
+#DW3>.fac-background { background-position: -243px -1203px }
+#DW4>.fac-background { background-position: -303px -1203px }
+#DW5>.fac-background { background-position: -363px -1203px }
+#DW6>.fac-background { background-position: -3px -1263px }
+#DW7>.fac-background { background-position: -63px -1263px }
+#DW8>.fac-background { background-position: -123px -1263px }
+#DW9>.fac-background { background-position: -183px -1263px }
+#DW10>.fac-background { background-position: -243px -1263px }
+#DW11>.fac-background { background-position: -303px -1263px }
+#DW12>.fac-background { background-position: -363px -1263px }
+#DG1>.fac-background { background-position: -123px -1323px }
+#DG2>.fac-background { background-position: -183px -1323px }
+#DG3>.fac-background { background-position: -243px -1323px }
+#DG4>.fac-background { background-position: -303px -1323px }
+#DG5>.fac-background { background-position: -363px -1323px }
+#DG6>.fac-background { background-position: -3px -1383px }
+#DG7>.fac-background { background-position: -63px -1383px }
+#DG8>.fac-background { background-position: -123px -1383px }
+#DG9>.fac-background { background-position: -183px -1383px }
+#DG10>.fac-background { background-position: -243px -1383px }
+#DG11>.fac-background { background-position: -303px -1383px }
+#DG12>.fac-background { background-position: -363px -1383px }
+#AR1>.fac-background { background-position: -123px -1443px }
+#AR2>.fac-background { background-position: -183px -1443px }
+#AR3>.fac-background { background-position: -243px -1443px }
+#AR4>.fac-background { background-position: -303px -1443px }
+#AR5>.fac-background { background-position: -363px -1443px }
+#AR6>.fac-background { background-position: -3px -1503px }
+#AR7>.fac-background { background-position: -63px -1503px }
+#AR8>.fac-background { background-position: -123px -1503px }
+#AR9>.fac-background { background-position: -183px -1503px }
+#AR10>.fac-background { background-position: -243px -1503px }
+#AR11>.fac-background { background-position: -303px -1503px }
+#AR12>.fac-background { background-position: -363px -1503px }
+#DJ1>.fac-background { background-position: -123px -1563px }
+#DJ2>.fac-background { background-position: -183px -1563px }
+#DJ3>.fac-background { background-position: -243px -1563px }
+#DJ4>.fac-background { background-position: -303px -1563px }
+#DJ5>.fac-background { background-position: -363px -1563px }
+#DJ6>.fac-background { background-position: -3px -1623px }
+#DJ7>.fac-background { background-position: -63px -1623px }
+#DJ8>.fac-background { background-position: -123px -1623px }
+#DJ9>.fac-background { background-position: -183px -1623px }
+#DJ10>.fac-background { background-position: -243px -1623px }
+#DJ11>.fac-background { background-position: -303px -1623px }
+#DJ12>.fac-background { background-position: -363px -1623px }
+#MK1>.fac-background { background-position: -123px -1683px }
+#MK2>.fac-background { background-position: -183px -1683px }
+#MK3>.fac-background { background-position: -243px -1683px }
+#MK4>.fac-background { background-position: -303px -1683px }
+#MK5>.fac-background { background-position: -363px -1683px }
+#MK6>.fac-background { background-position: -3px -1743px }
+#MK7>.fac-background { background-position: -63px -1743px }
+#MK8>.fac-background { background-position: -123px -1743px }
+#MK9>.fac-background { background-position: -183px -1743px }
+#MK10>.fac-background { background-position: -243px -1743px }
+#MK11>.fac-background { background-position: -303px -1743px }
+#MK12>.fac-background { background-position: -363px -1743px }
+
+
 .debug { display: none; }
 
 
 
 .tooltip {
-  display: block !important;
-  z-index: 10000;
+    display: block !important;
+    z-index: 10000;
+    pointer-events: none;
 }
 
 .tooltip .tooltip-inner {
-  background: black;
-  color: white;
-  max-width: 500px;
-  border-radius: 16px;
-  padding: 5px 10px 4px;
+    background: black;
+    color: white;
+    max-width: 500px;
+    border-radius: 16px;
+    padding: 5px 10px 4px;
 }
 
 .tooltip .tooltip-arrow {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  position: absolute;
-  margin: 5px;
-  border-color: black;
-  z-index: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: black;
+    z-index: 1;
 }
 
 .tooltip[x-placement^="top"] {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .tooltip[x-placement^="top"] .tooltip-arrow {
-  border-width: 5px 5px 0 5px;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  border-bottom-color: transparent !important;
-  bottom: -5px;
-  left: calc(50% - 5px);
-  margin-top: 0;
-  margin-bottom: 0;
+    border-width: 5px 5px 0 5px;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    bottom: -5px;
+    left: calc(50% - 5px);
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .tooltip[x-placement^="bottom"] {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .tooltip[x-placement^="bottom"] .tooltip-arrow {
-  border-width: 0 5px 5px 5px;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  border-top-color: transparent !important;
-  top: -5px;
-  left: calc(50% - 5px);
-  margin-top: 0;
-  margin-bottom: 0;
+    border-width: 0 5px 5px 5px;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-top-color: transparent !important;
+    top: -5px;
+    left: calc(50% - 5px);
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .tooltip[x-placement^="right"] {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .tooltip[x-placement^="right"] .tooltip-arrow {
-  border-width: 5px 5px 5px 0;
-  border-left-color: transparent !important;
-  border-top-color: transparent !important;
-  border-bottom-color: transparent !important;
-  left: -5px;
-  top: calc(50% - 5px);
-  margin-left: 0;
-  margin-right: 0;
+    border-width: 5px 5px 5px 0;
+    border-left-color: transparent !important;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+    left: -5px;
+    top: calc(50% - 5px);
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .tooltip[x-placement^="left"] {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 .tooltip[x-placement^="left"] .tooltip-arrow {
-  border-width: 5px 0 5px 5px;
-  border-top-color: transparent !important;
-  border-right-color: transparent !important;
-  border-bottom-color: transparent !important;
-  right: -5px;
-  top: calc(50% - 5px);
-  margin-left: 0;
-  margin-right: 0;
+    border-width: 5px 0 5px 5px;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    right: -5px;
+    top: calc(50% - 5px);
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .tooltip.popover .popover-inner {
-  background: #f9f9f9;
-  color: black;
-  padding: 24px;
-  border-radius: 5px;
-  box-shadow: 0 5px 30px rgba(black, .1);
+    background: #d9d9d9;
+    color: black;
+    padding: 24px;
+    border-radius: 5px;
+    box-shadow: 0 5px 30px rgba(black, .1);
 }
 
 .tooltip.popover .popover-arrow {
-  border-color: #f9f9f9;
+    border-color: #d9d9d9;
 }
 
 .tooltip[aria-hidden='true'] {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity .15s, visibility .15s;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s, visibility .15s;
 }
 
 .tooltip[aria-hidden='false'] {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity .15s;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s;
 }

@@ -177,11 +177,75 @@ Vue.component('research', {
             this.$emit('change-done', this.id);
         },
         available(newVal, oldVal) {
-            if(newVal != oldVal)
-                this.$emit('set-available', this.id, newVal);
+            this.$emit('set-available', this.id, newVal);
         }
     },
-    template: '<div v-show="show" v-tooltip="{ content: rchTooltip, html: true }" :id="id" :class="[cat, {checked, enabled, available}]" @click="toggleResearch"><div class="background"></div><img src="img/OKSign.png" alt="V" class="sign ok-sign"><img src="img/NOSign.png" alt="X" class="sign no-sign"></div>'
+    template: '<div v-show="show" v-tooltip="{ content: rchTooltip, html: true, autoHide: false }" :id="id" :class="[cat, {checked, enabled, available}]" @click="toggleResearch"><div class="background"></div><div class="sign ok-sign"></div><div class="sign no-sign"></div></div>'
+});
+
+
+Vue.component('upgrade', {
+    props: ['id', 'upgTooltip', 'disp'],
+    data() {
+        return {
+            checked: false
+        };
+    },
+
+    computed: {
+        uFac() {
+            return this.id.slice(0,2);
+        },
+        uNum() {
+            return parseInt(this.id.slice(2));
+        },
+        isPrestige() {
+            return factionGroups.prestige.includes(this.uFac);
+        },
+        isElite() {
+            return factionGroups.elite.includes(this.uFac);
+        },
+        show() {
+            let r = this.$root.rein;
+            let f = factionList[this.$root.faction];
+            if(this.$root.faction===undefined || this.$root.faction=="")
+                return true;
+            if(this.$root.faction==='MC') {
+                if(r >= 100 && r < 160)
+                    return false;
+                if(this.disp >= 1 && this.disp <= 4 && Math.floor((this.uNum+2)/3) != this.disp)
+                    return false;
+                if(this.disp == 5 && factionList[this.uFac].align[0] !== 'good')
+                    return false;
+                if(this.disp == 6 && factionList[this.uFac].align[0] !== 'evil')
+                    return false;
+                if(this.disp == 7 && !this.checked)
+                    return false;
+                return this.uNum < 10 || r >= 160;
+            }
+            if(this.isElite) {
+                if(f.elite !== this.uFac || r < 125 || !this.$root.elite)
+                    return false;
+                return this.uNum < 10 || r >= 130;
+            }
+            if(this.isPrestige) {
+                if(f.prestige !== this.uFac || (r >= 100 && r < 116) || r < 29 || !this.$root.prestige)
+                    return false;
+                return this.uNum < 10 || r >= 116;
+            }
+            if(this.$root.faction !== this.uFac)
+                return false;
+            return this.uNum < 10 || r >= 100;
+        }
+    },
+    methods: {
+        toggleUpgrade() {
+            if(this.$root.faction != 'MC')
+                return;
+            this.checked = !this.checked;
+        }
+    },
+    template: '<div v-show="show" v-tooltip="{ content: upgTooltip, html: true, autoHide: false }" @click="toggleUpgrade" :id="id"><div class="fac-background"></div><div class="sign ok-sign"></div><div class="sign no-sign"></div></div>'
 });
 
 const regA = /good|evil|neutral|order|chaos|balance/ig
@@ -190,7 +254,7 @@ const regR = /[SCDEAWF][0-9]{1,4}/i;
 let strU = '', strS = '', strFName = '';
 let regU, regS, regFName;
 $( document ).ready(function() {
-    //$.ajaxSetup({ cache: false });
+    $.ajaxSetup({ cache: false });
     $.getJSON(jsonMisc, function(data) {
         factionGroups = data.factionGroups;
         nawPageList = data.nawPageList;
@@ -238,14 +302,19 @@ function runApp() {
             checkAncientDevice: false,
             templateText: '',
             imported: 0,
+            nawFacUpg: {},
             nawRchTree: {},
             nawSections: {},
             nawPage: '',
             nawBuildId: [],
-            archonBlood: 'none',
+            showPreview: false,
+            archonBlood: 'A400',
             slotAdd: 1,
             rchChange,
             rchAvailable,
+            unfoldRtree: true,
+            unfoldUpgrade: false,
+            upgradeDisplay: 0,
             researchSelected: {
                 Spellcraft: { cost: 0, rch: [] },
                 Craftsmanship: { cost: 0, rch: [] },
@@ -266,7 +335,27 @@ function runApp() {
             },
             baseFactions: Object.values(factionList).filter(f => f.abbr == 'MC' || factionGroups.base.includes(f.abbr)),
             rTreeData,
-            nawPageList
+            nawPageList,
+            outputHtml: {
+                name: '',
+                desc: [
+                    { name: 'Author', value: '' },
+                    { name: 'Requirement', value: '' },
+                    { name: 'Range', value: '' },
+                    { name: 'Faction', value: '' },
+                    { name: 'Alignment', value: '' },
+                    { name: 'Bloodline', value: '' },
+                    { name: 'A2950', value: '' },
+                    { name: 'D5875', value: '' },
+                    { name: 'Artifact Set', value: '' },
+                    { name: 'Duration', value: '' }
+                ],
+                copyButton: [],
+                template: '',
+                note: [
+                    { name: 'Notes', value: '' }
+                ]
+            }
         },
         computed: {
             nawCategory() {
@@ -285,14 +374,57 @@ function runApp() {
                 let category = $( '.rgtv-category', this.nawSections[this.nawPage] ).get(this.nawBuildId[0]);
                 return $( '.rgtv-build', category ).get(this.nawBuildId[1]);
             },
+            buildHtml() {
+                if(this.showPreview) {
+                    let htmlText = '<div class="shelementwhole rgtv-build">\n';
+                    // name
+                    htmlText += `\t<p onclick="shohid($(this));"><b><a href="#" onclick="return false;">${this.outputHtml.name}</a></b></p>\n`;
+                    htmlText += '\t<div class="autohide">\n';
+                    // desc
+                    let subText = '';
+                    for(let entry of this.outputHtml.desc) {
+                        if(entry.name.length && entry.value.length)
+                            subText += `\t\t\t<p><b>${entry.name}</b>: ${entry.value}</p>\n`;
+                    }
+                    if(subText.length)
+                        htmlText += `\t\t<div class="rgtv-desc">\n${subText}\t\t</div>\n`;
+
+                    /*
+                        button
+                    */
+
+                    // template
+                    subText = this.outputHtml.template;
+                    if(subText.length)
+                        htmlText += `\t\t<div class="rgtv-template">\n${subText}\t\t</div>\n`;
+
+                    // notes
+                    subText = '';
+                    for(let entry of this.outputHtml.note) {
+                        let name = entry.name.length ? `<b>${entry.name}</b>` : '';
+                        if(entry.value.length)
+                            subText += `\t\t\t<p>${name}: ${entry.value}</p>\n`;
+                        else if(name.length)
+                            subText += `\t\t\t<p>${name}</p>\n`;
+                    }
+                    if(subText.length)
+                        htmlText += `\t\t<div class="rgtv-notes">\n${subText}\t\t</div>\n`;
+
+                    htmlText += '\t</div>\n</div>\n';
+                    return htmlText;
+                } else {
+                    return this.nawBuildHtml;
+                }
+            },
             nawBuildHtml() {
                 if(this.nawBuildId !== undefined && this.nawBuildId.length > 0) {
                     let desc = $( '.rgtv-desc', this.nawBuild ).html();
                     let temp = $( '.rgtv-template', this.nawBuild ).html();
                     let note = $( '.rgtv-notes', this.nawBuild ).html();
-                    return (desc ? desc : '') + (temp ? temp : '') + (note ? note : '');
+                    return `${desc || ''} ${temp || ''} ${note || ''}`;
+                } else {
+                    return '';
                 }
-                return '';
             },
             facTooltip() {
                 let asc = getAscension(this.rein);
@@ -357,11 +489,11 @@ function runApp() {
             pointsUsed() {
                 return Math.max(...Object.values(this.researchSelected).map(e => e.cost));
             },
-            notOrder() {
+            isArchon400() {
                 if(this.faction === undefined || this.faction == "")
-                    return true;
+                    return false;
                 else
-                    return factionList[this.faction].align[1] != 'order';
+                    return factionList[this.faction].align[1] == 'order' && this.elite && this.rein >= 130;
             },
             requiredTime() {
                 let pts = this.pointsUsed - this.budgets - 500;
@@ -416,7 +548,7 @@ function runApp() {
                         rss[val] = key != 'F' ? 1 : 0;
                         if(this.archonBlood == 'bloodline')
                             rss[val] += this.slotAdd;
-                        if(this.archonBlood == 'A400' && this.hasBloodSpring && !this.notOrder && this.elite)
+                        if(this.archonBlood == 'A400' && this.hasBloodSpring && this.isArchon400)
                             rss[val] += this.slotAdd;
                     }
                     return rss;
@@ -470,26 +602,38 @@ function runApp() {
                 }
             },
             exportBtn(cmd) {
-                let denseStr = '';
                 let merc = this.mercUpgrades;
-                for(let i of merc.tier) {
-                    for (let j of i) {
-                        denseStr += `,${j}`;
-                    }
-                }
+                let template = [];
+
+                let upgs = [];
+                for(let t of merc.tier)
+                    for (let u of t)
+                        upgs.push(u);
                 if(merc.ma.length)
-                    denseStr += `,${merc.ma}`;
-                for(let i of merc.spells)
-                    denseStr += `,${i}`;
+                    upgs.push(merc.ma);
+                if(upgs.length)
+                    template.push(upgs.join(','));
+
+                upgs = [];
+                for(let sp of merc.spells)
+                    upgs.push(sp);
                 if(merc.unique.length)
-                    denseStr += `,${merc.unique}`;
+                    upgs.push(merc.unique);
                 if(merc.union.length)
-                    denseStr += `,${merc.union}`;
-                for(let cat in this.researchSelected) {
-                    for(let rch of this.researchSelected[cat].rch)
-                        denseStr += `,${rch}`;
+                    upgs.push(merc.union);
+                if(upgs.length)
+                    template.push(upgs.join(','));
+
+                for(let cat in this.researchSelected)
+                    if(this.researchSelected[cat].rch.length)
+                        template.push(this.researchSelected[cat].rch.join(','));
+
+                if(cmd)
+                    this.templateText = template.join(',');
+                else {
+                    this.outputHtml.template = `\t\t\t<p>${template.join(',</p>\n\t\t\t<p>')}</p>\n`;
+                    this.showPreview = true;
                 }
-                this.templateText = denseStr.slice(1);
             },
             importBtn(isHuman) {
                 let tempText = this.templateText;
@@ -558,7 +702,7 @@ function runApp() {
                     }
                 }
                 if(!isHuman)
-                    this.exportBtn();
+                    this.exportBtn(true);
             },
             resChange(rId, checked, cat, cost) {
                 let rs = this.researchSlots[cat];
@@ -608,6 +752,40 @@ function runApp() {
                     if(rch.free && !selected && this.rchAvailable[rch.id])
                         this.resChange(rch.id, true, cat, rch.cost);
                 }
+            },
+            addRow(key, ind) {
+                let newRow = {
+                    name: this.outputHtml[key][ind].name,
+                    value: ''
+                };
+                this.outputHtml[key].splice(ind + 1, 0, newRow);
+            },
+            delRow(key, ind) {
+                if(this.outputHtml[key].length > 1)
+                    this.outputHtml[key].splice(ind, 1);
+            },
+            resetForm() {
+
+                this.outputHtml = {
+                    name: '',
+                    desc: [
+                        { name: 'Author', value: '' },
+                        { name: 'Requirement', value: '' },
+                        { name: 'Range', value: '' },
+                        { name: 'Faction', value: '' },
+                        { name: 'Alignment', value: '' },
+                        { name: 'Bloodline', value: '' },
+                        { name: 'A2950', value: '' },
+                        { name: 'D5875', value: '' },
+                        { name: 'Artifact Set', value: '' },
+                        { name: 'Duration', value: '' }
+                    ],
+                    copyButton: [],
+                    template: '',
+                    note: [
+                        { name: 'Notes', value: '' }
+                    ]
+                };
             }
         },
         watch: {
@@ -660,6 +838,14 @@ function runApp() {
                     let category = this.nawCategory[this.nawBuildId[0]];
                     let buildName = category.buildList[this.nawBuildId[1]];
                     let rString = buildName.match(/[^A]?R([0-9]+)/) || category.name.match(/[^A]?R([0-9]+)/) || buildName.match(/(Archon|Djinn|Makers) Challenge ([12345])/);
+                    let outputHtml = {
+                        name: buildName,
+                        desc: [],
+                        copyButton: [],
+                        template: '', 
+                        note: []
+                    };
+                    this.showPreview = false;
                     if(rString) {
                         if(rString[1].match(/Archon|Djinn|Makers/)) {
                             let ch = parseInt(rString[2]);
@@ -690,6 +876,8 @@ function runApp() {
                             let v = $( val ).contents().filter(function(){ 
                                 return this.nodeType == 3;
                             }).text().replace(/:/, '').trim();
+
+                            outputHtml.desc.push({ name: k, value: v });
 
                             if(k.match(/faction/i)) {
                                 let f = v.match(regFName);
@@ -732,36 +920,45 @@ function runApp() {
                             return s;
                         }
                     }).get().join('');
+                    $( '.rgtv-notes', this.nawBuild ).children().each((ind, val) => {
+                        if($( val ).has( "b" ).length) {
+                            let k = $( "b", val ).text();
+                            let v = $( val ).contents().filter(function(){ 
+                                return this.nodeType == 3;
+                            }).text().replace(/:/, '').trim();
+                            outputHtml.note.push({ name: k, value: v });
+                        } else {
+                            outputHtml.note.push({ name: '', value: $( val ).text() });
+                        }
+                    });
+                    this.outputHtml = outputHtml;
                     this.importBtn(false);
                 }
             },
-            researchSlots: {
-                deep: true,
-                handler() {
-                    for(let key in this.researchSlots) {
-                        let budgets = this.researchSlots[key];
-                        let rs = this.researchSelected[key];
-                        let asc = getAscension(this.rein);
-                        let freeSlots = [];
-                        while(budgets > -1 && budgets < rs.cost) {
-                            let rch = rs.rch.pop();
-                            let oldCost = rs.cost;
-                            if(asc < 2) {
+            researchSlots() {
+                for(let key in this.researchSlots) {
+                    let budgets = this.researchSlots[key];
+                    let rs = this.researchSelected[key];
+                    let asc = getAscension(this.rein);
+                    let freeSlots = [];
+                    while(budgets > -1 && budgets < rs.cost) {
+                        let rch = rs.rch.pop();
+                        let oldCost = rs.cost;
+                        if(asc < 2) {
+                            rs.cost--;
+                        } else if(asc == 2) {
+                            if(rTreeData[rDict[rch[0]]].find(e => e.id == rch).free)
+                                freeSlots.push(rch);
+                            else
                                 rs.cost--;
-                            } else if(asc == 2) {
-                                if(rTreeData[rDict[rch[0]]].find(e => e.id == rch).free)
-                                    freeSlots.push(rch);
-                                else
-                                    rs.cost--;
-                            } else {
-                                rs.cost -= parseInt(rch.slice(1));
-                            }
-                            if(oldCost > rs.cost)
-                                this.rchChange[rch] = true;
+                        } else {
+                            rs.cost -= parseInt(rch.slice(1));
                         }
-                        for(let rch of freeSlots)
-                            rs.rch.push(rch);
+                        if(oldCost > rs.cost)
+                            this.rchChange[rch] = true;
                     }
+                    for(let rch of freeSlots)
+                        rs.rch.push(rch);
                 }
             }
         }
@@ -781,7 +978,7 @@ function runApp() {
         }).map(function () {
             let rch = $( this ).attr( "research" ).match(regR)[0];
             if(validText.includes(rch)) {
-                return { name: rch, str: $( this ).attr( "research" ) };
+                return { name: rch, str: '<p>' + $( this ).attr( "research" ).split('\n').join('</p>') };
             }
         }).get();
         let nawRchTree = {};
@@ -789,5 +986,26 @@ function runApp() {
             nawRchTree[r.name] = r.str;
         }
         vm.nawRchTree = nawRchTree;
+    });
+    $.get(`${nawRoot}/FactionUpgrades/index.php`, data => {
+        let html = $.parseHTML( data );
+        let nawFacUpg = {};
+        for(let f in factionList) {
+            let heads = $( 'p:contains("Mercenary Template")', html ).filter( `:contains(${f})` );
+            if(f === 'MC')
+                continue;
+            for(let i=0; i<12; i++) {
+                let upg = '<p><b>' + heads[i].previousElementSibling.innerText.slice(1) + '</b></p>\n';
+                upg += `<p><b>Faction</b>: ${factionList[f].name}</p>\n`;
+                upg += heads[i].outerHTML + '\n';
+                let nextElm = heads[i].nextElementSibling;
+                while(nextElm !== null  && nextElm.tagName === 'P') {
+                    upg += nextElm.outerHTML + '\n';
+                    nextElm = nextElm.nextElementSibling;
+                }
+                nawFacUpg[`${f}${i+1}`] = upg;
+            }
+        }
+        vm.nawFacUpg = nawFacUpg;
     });
 }

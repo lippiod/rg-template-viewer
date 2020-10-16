@@ -5,7 +5,6 @@
             "cost": 1,
             "id": "S1",
             "free": true,
-            "imported": false,
             "req": [
                 "FR",
                 ":UB"
@@ -16,7 +15,6 @@
             "cost": 10,
             "id": "S10",
             "free": true,
-            "imported": false,
             "req": [
                 "AN",
                 ":UB"
@@ -27,7 +25,6 @@
             "cost": 30,
             "id": "S30",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -35,7 +32,6 @@
             "cost": 50,
             "id": "S50",
             "free": true,
-            "imported": false,
             "req": [
                 "GB",
                 ":UB"
@@ -46,7 +42,6 @@
             "cost": 105,
             "id": "S105",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -54,7 +49,6 @@
             "cost": 135,
             "id": "S135",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -62,7 +56,6 @@
             "cost": 150,
             "id": "S150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -70,7 +63,6 @@
             "cost": 175,
             "id": "S175",
             "free": true,
-            "imported": false,
             "req": [
                 "EL",
                 ":UP"
@@ -81,7 +73,6 @@
             "cost": 180,
             "id": "S180",
             "free": true,
-            "imported": false,
             "req": [
                 "FR"
             ]
@@ -91,7 +82,6 @@
             "cost": 200,
             "id": "S200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -99,7 +89,6 @@
             "cost": 215,
             "id": "S215",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -107,7 +96,6 @@
             "cost": 225,
             "id": "S225",
             "free": true,
-            "imported": false,
             "req": [
                 "UD",
                 ":UB"
@@ -118,7 +106,6 @@
             "cost": 250,
             "id": "S250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -126,7 +113,6 @@
             "cost": 251,
             "id": "S251",
             "free": true,
-            "imported": false,
             "req": [
                 "FC",
                 ":UB"
@@ -137,7 +123,6 @@
             "cost": 270,
             "id": "S270",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -145,7 +130,6 @@
             "cost": 300,
             "id": "S300",
             "free": true,
-            "imported": false,
             "req": [
                 "TT",
                 ":SP"
@@ -156,7 +140,6 @@
             "cost": 305,
             "id": "S305",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -164,7 +147,6 @@
             "cost": 330,
             "id": "S330",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -172,7 +154,6 @@
             "cost": 375,
             "id": "S375",
             "free": true,
-            "imported": false,
             "req": [
                 "FC",
                 ":SP"
@@ -183,7 +164,6 @@
             "cost": 400,
             "id": "S400",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -191,7 +171,6 @@
             "cost": 435,
             "id": "S435",
             "free": true,
-            "imported": false,
             "req": [
                 "DW"
             ]
@@ -201,7 +180,6 @@
             "cost": 460,
             "id": "S460",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -209,7 +187,6 @@
             "cost": 500,
             "id": "S500",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -217,7 +194,6 @@
             "cost": 545,
             "id": "S545",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -225,7 +201,6 @@
             "cost": 590,
             "id": "S590",
             "free": true,
-            "imported": false,
             "req": [
                 "FR",
                 "DN"
@@ -236,7 +211,6 @@
             "cost": 1275,
             "id": "S1275",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -244,7 +218,6 @@
             "cost": 1450,
             "id": "S1450",
             "free": true,
-            "imported": false,
             "req": [
                 "DG"
             ]
@@ -254,7 +227,6 @@
             "cost": 1500,
             "id": "S1500",
             "free": true,
-            "imported": false,
             "req": [
                 "FC",
                 "DG"
@@ -265,7 +237,6 @@
             "cost": 2875,
             "id": "S2875",
             "free": true,
-            "imported": false,
             "req": [
                 "MC"
             ]
@@ -275,7 +246,6 @@
             "cost": 3200,
             "id": "S3200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -283,7 +253,6 @@
             "cost": 5125,
             "id": "S5125",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -291,7 +260,6 @@
             "cost": 5375,
             "id": "S5375",
             "free": false,
-            "imported": false,
             "req": [
                 "chaos"
             ]
@@ -301,7 +269,6 @@
             "cost": 5625,
             "id": "S5625",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -309,7 +276,6 @@
             "cost": 5875,
             "id": "S5875",
             "free": false,
-            "imported": false,
             "req": []
         }
     ],
@@ -319,7 +285,6 @@
             "cost": 1,
             "id": "C1",
             "free": true,
-            "imported": false,
             "req": [
                 "EL",
                 ":UB"
@@ -330,7 +295,6 @@
             "cost": 10,
             "id": "C10",
             "free": true,
-            "imported": false,
             "req": [
                 "FR",
                 ":UB"
@@ -341,7 +305,6 @@
             "cost": 25,
             "id": "C25",
             "free": true,
-            "imported": false,
             "req": [
                 "AN"
             ]
@@ -351,7 +314,6 @@
             "cost": 50,
             "id": "C50",
             "free": true,
-            "imported": false,
             "req": [
                 "DM",
                 ":UB"
@@ -362,7 +324,6 @@
             "cost": 80,
             "id": "C80",
             "free": false,
-            "imported": false,
             "req": [
                 "~neutral"
             ]
@@ -372,7 +333,6 @@
             "cost": 105,
             "id": "C105",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -380,7 +340,6 @@
             "cost": 120,
             "id": "C120",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -388,7 +347,6 @@
             "cost": 135,
             "id": "C135",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -396,7 +354,6 @@
             "cost": 150,
             "id": "C150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -404,7 +361,6 @@
             "cost": 175,
             "id": "C175",
             "free": true,
-            "imported": false,
             "req": [
                 "GB"
             ]
@@ -414,7 +370,6 @@
             "cost": 200,
             "id": "C200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -422,7 +377,6 @@
             "cost": 225,
             "id": "C225",
             "free": true,
-            "imported": false,
             "req": [
                 "EL",
                 ":UB"
@@ -433,7 +387,6 @@
             "cost": 250,
             "id": "C250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -441,7 +394,6 @@
             "cost": 251,
             "id": "C251",
             "free": true,
-            "imported": false,
             "req": [
                 "TT",
                 ":UB"
@@ -452,7 +404,6 @@
             "cost": 300,
             "id": "C300",
             "free": true,
-            "imported": false,
             "req": [
                 "DD",
                 ":UB"
@@ -463,7 +414,6 @@
             "cost": 305,
             "id": "C305",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -471,7 +421,6 @@
             "cost": 330,
             "id": "C330",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -479,7 +428,6 @@
             "cost": 340,
             "id": "C340",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -487,7 +435,6 @@
             "cost": 375,
             "id": "C375",
             "free": true,
-            "imported": false,
             "req": [
                 "TT",
                 ":SP"
@@ -498,7 +445,6 @@
             "cost": 400,
             "id": "C400",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -506,7 +452,6 @@
             "cost": 405,
             "id": "C405",
             "free": true,
-            "imported": false,
             "req": [
                 "DN",
                 ":UB"
@@ -517,7 +462,6 @@
             "cost": 460,
             "id": "C460",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -525,7 +469,6 @@
             "cost": 500,
             "id": "C500",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -533,7 +476,6 @@
             "cost": 520,
             "id": "C520",
             "free": true,
-            "imported": false,
             "req": [
                 "DN",
                 ":SP"
@@ -544,7 +486,6 @@
             "cost": 590,
             "id": "C590",
             "free": true,
-            "imported": false,
             "req": [
                 "EL",
                 "DN"
@@ -555,7 +496,6 @@
             "cost": 1300,
             "id": "C1300",
             "free": true,
-            "imported": false,
             "req": [
                 "DG"
             ]
@@ -565,7 +505,6 @@
             "cost": 1325,
             "id": "C1325",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -573,7 +512,6 @@
             "cost": 1500,
             "id": "C1500",
             "free": true,
-            "imported": false,
             "req": [
                 "TT",
                 "DG"
@@ -584,7 +522,6 @@
             "cost": 3000,
             "id": "C3000",
             "free": true,
-            "imported": false,
             "req": [
                 "MC"
             ]
@@ -594,7 +531,6 @@
             "cost": 3100,
             "id": "C3100",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -602,7 +538,6 @@
             "cost": 5125,
             "id": "C5125",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -610,7 +545,6 @@
             "cost": 5375,
             "id": "C5375",
             "free": false,
-            "imported": false,
             "req": [
                 "neutral"
             ]
@@ -620,7 +554,6 @@
             "cost": 5625,
             "id": "C5625",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -628,7 +561,6 @@
             "cost": 5875,
             "id": "C5875",
             "free": false,
-            "imported": false,
             "req": []
         }
     ],
@@ -638,7 +570,6 @@
             "cost": 1,
             "id": "D1",
             "free": true,
-            "imported": false,
             "req": [
                 "AN",
                 ":UB"
@@ -649,7 +580,6 @@
             "cost": 10,
             "id": "D10",
             "free": true,
-            "imported": false,
             "req": [
                 "DM",
                 ":UB"
@@ -660,7 +590,6 @@
             "cost": 25,
             "id": "D25",
             "free": true,
-            "imported": false,
             "req": [
                 "UD"
             ]
@@ -670,7 +599,6 @@
             "cost": 50,
             "id": "D50",
             "free": true,
-            "imported": false,
             "req": [
                 "EL",
                 ":UB"
@@ -681,7 +609,6 @@
             "cost": 55,
             "id": "D55",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -689,7 +616,6 @@
             "cost": 135,
             "id": "D135",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -697,7 +623,6 @@
             "cost": 150,
             "id": "D150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -705,7 +630,6 @@
             "cost": 175,
             "id": "D175",
             "free": true,
-            "imported": false,
             "req": [
                 "AN",
                 ":SP"
@@ -716,7 +640,6 @@
             "cost": 200,
             "id": "D200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -724,7 +647,6 @@
             "cost": 205,
             "id": "D205",
             "free": false,
-            "imported": false,
             "req": [
                 "good"
             ]
@@ -734,7 +656,6 @@
             "cost": 225,
             "id": "D225",
             "free": true,
-            "imported": false,
             "req": [
                 "FR",
                 ":UB"
@@ -745,7 +666,6 @@
             "cost": 245,
             "id": "D245",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -753,7 +673,6 @@
             "cost": 250,
             "id": "D250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -761,7 +680,6 @@
             "cost": 260,
             "id": "D260",
             "free": true,
-            "imported": false,
             "req": [
                 "FC",
                 ":UB"
@@ -772,7 +690,6 @@
             "cost": 275,
             "id": "D275",
             "free": true,
-            "imported": false,
             "req": [
                 "DD"
             ]
@@ -782,7 +699,6 @@
             "cost": 290,
             "id": "D290",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -790,7 +706,6 @@
             "cost": 320,
             "id": "D320",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -798,7 +713,6 @@
             "cost": 330,
             "id": "D330",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -806,7 +720,6 @@
             "cost": 350,
             "id": "D350",
             "free": true,
-            "imported": false,
             "req": [
                 "TT",
                 ":UB"
@@ -817,7 +730,6 @@
             "cost": 400,
             "id": "D400",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -825,7 +737,6 @@
             "cost": 435,
             "id": "D435",
             "free": true,
-            "imported": false,
             "req": [
                 "DN",
                 "good"
@@ -836,7 +747,6 @@
             "cost": 480,
             "id": "D480",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -844,7 +754,6 @@
             "cost": 525,
             "id": "D525",
             "free": false,
-            "imported": false,
             "req": [
                 "good"
             ]
@@ -854,7 +763,6 @@
             "cost": 560,
             "id": "D560",
             "free": true,
-            "imported": false,
             "req": [
                 "DW"
             ]
@@ -864,7 +772,6 @@
             "cost": 590,
             "id": "D590",
             "free": true,
-            "imported": false,
             "req": [
                 "AN",
                 "DN"
@@ -875,7 +782,6 @@
             "cost": 1125,
             "id": "D1125",
             "free": true,
-            "imported": false,
             "req": [
                 "DG",
                 ":UB"
@@ -886,7 +792,6 @@
             "cost": 1275,
             "id": "D1275",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -894,7 +799,6 @@
             "cost": 1375,
             "id": "D1375",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -902,7 +806,6 @@
             "cost": 2775,
             "id": "D2775",
             "free": true,
-            "imported": false,
             "req": [
                 "MC"
             ]
@@ -912,7 +815,6 @@
             "cost": 3350,
             "id": "D3350",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -920,7 +822,6 @@
             "cost": 5125,
             "id": "D5125",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -928,7 +829,6 @@
             "cost": 5375,
             "id": "D5375",
             "free": false,
-            "imported": false,
             "req": [
                 "good"
             ]
@@ -938,7 +838,6 @@
             "cost": 5625,
             "id": "D5625",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -946,7 +845,6 @@
             "cost": 5875,
             "id": "D5875",
             "free": false,
-            "imported": false,
             "req": []
         }
     ],
@@ -956,7 +854,6 @@
             "cost": 1,
             "id": "E1",
             "free": true,
-            "imported": false,
             "req": [
                 "GB",
                 ":UB"
@@ -967,7 +864,6 @@
             "cost": 10,
             "id": "E10",
             "free": true,
-            "imported": false,
             "req": [
                 "UD",
                 ":UB"
@@ -978,7 +874,6 @@
             "cost": 25,
             "id": "E25",
             "free": true,
-            "imported": false,
             "req": [
                 "EL"
             ]
@@ -988,7 +883,6 @@
             "cost": 30,
             "id": "E30",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -996,7 +890,6 @@
             "cost": 50,
             "id": "E50",
             "free": true,
-            "imported": false,
             "req": [
                 "FR",
                 ":UB"
@@ -1007,7 +900,6 @@
             "cost": 80,
             "id": "E80",
             "free": false,
-            "imported": false,
             "req": [
                 "~neutral"
             ]
@@ -1017,7 +909,6 @@
             "cost": 135,
             "id": "E135",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1025,7 +916,6 @@
             "cost": 145,
             "id": "E145",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1033,7 +923,6 @@
             "cost": 150,
             "id": "E150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1041,7 +930,6 @@
             "cost": 200,
             "id": "E200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1049,7 +937,6 @@
             "cost": 225,
             "id": "E225",
             "free": true,
-            "imported": false,
             "req": [
                 "GB",
                 ":UB"
@@ -1060,7 +947,6 @@
             "cost": 230,
             "id": "E230",
             "free": true,
-            "imported": false,
             "req": [
                 "DM"
             ]
@@ -1070,7 +956,6 @@
             "cost": 250,
             "id": "E250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1078,7 +963,6 @@
             "cost": 260,
             "id": "E260",
             "free": true,
-            "imported": false,
             "req": [
                 "DD",
                 ":UB"
@@ -1089,7 +973,6 @@
             "cost": 275,
             "id": "E275",
             "free": true,
-            "imported": false,
             "req": [
                 "TT"
             ]
@@ -1099,7 +982,6 @@
             "cost": 290,
             "id": "E290",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1107,7 +989,6 @@
             "cost": 320,
             "id": "E320",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1115,7 +996,6 @@
             "cost": 330,
             "id": "E330",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1123,7 +1003,6 @@
             "cost": 350,
             "id": "E350",
             "free": true,
-            "imported": false,
             "req": [
                 "FC"
             ]
@@ -1133,7 +1012,6 @@
             "cost": 400,
             "id": "E400",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1141,7 +1019,6 @@
             "cost": 410,
             "id": "E410",
             "free": true,
-            "imported": false,
             "req": [
                 "DN",
                 ":UB"
@@ -1152,7 +1029,6 @@
             "cost": 460,
             "id": "E460",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1160,7 +1036,6 @@
             "cost": 480,
             "id": "E480",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1168,7 +1043,6 @@
             "cost": 495,
             "id": "E495",
             "free": true,
-            "imported": false,
             "req": [
                 "DW",
                 ":UB"
@@ -1179,7 +1053,6 @@
             "cost": 590,
             "id": "E590",
             "free": true,
-            "imported": false,
             "req": [
                 "GB",
                 "DW"
@@ -1190,7 +1063,6 @@
             "cost": 1225,
             "id": "E1225",
             "free": true,
-            "imported": false,
             "req": [
                 "DG"
             ]
@@ -1200,7 +1072,6 @@
             "cost": 1325,
             "id": "E1325",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1208,7 +1079,6 @@
             "cost": 1425,
             "id": "E1425",
             "free": false,
-            "imported": false,
             "req": [
                 "neutral"
             ]
@@ -1218,7 +1088,6 @@
             "cost": 3250,
             "id": "E3250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1226,7 +1095,6 @@
             "cost": 3300,
             "id": "E3300",
             "free": true,
-            "imported": false,
             "req": [
                 "MC"
             ]
@@ -1236,7 +1104,6 @@
             "cost": 5125,
             "id": "E5125",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1244,7 +1111,6 @@
             "cost": 5375,
             "id": "E5375",
             "free": false,
-            "imported": false,
             "req": [
                 "balance"
             ]
@@ -1254,7 +1120,6 @@
             "cost": 5625,
             "id": "E5625",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1262,7 +1127,6 @@
             "cost": 5875,
             "id": "E5875",
             "free": false,
-            "imported": false,
             "req": []
         }
     ],
@@ -1272,7 +1136,6 @@
             "cost": 1,
             "id": "A1",
             "free": true,
-            "imported": false,
             "req": [
                 "UD",
                 ":UB"
@@ -1283,7 +1146,6 @@
             "cost": 10,
             "id": "A10",
             "free": true,
-            "imported": false,
             "req": [
                 "GB",
                 ":UB"
@@ -1294,7 +1156,6 @@
             "cost": 25,
             "id": "A25",
             "free": true,
-            "imported": false,
             "req": [
                 "DM",
                 ":SP"
@@ -1305,7 +1166,6 @@
             "cost": 30,
             "id": "A30",
             "free": true,
-            "imported": false,
             "req": [
                 "FR",
                 ":SP"
@@ -1316,7 +1176,6 @@
             "cost": 50,
             "id": "A50",
             "free": true,
-            "imported": false,
             "req": [
                 "AN",
                 ":UB"
@@ -1327,7 +1186,6 @@
             "cost": 55,
             "id": "A55",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1335,7 +1193,6 @@
             "cost": 105,
             "id": "A105",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1343,7 +1200,6 @@
             "cost": 120,
             "id": "A120",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1351,7 +1207,6 @@
             "cost": 135,
             "id": "A135",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1359,7 +1214,6 @@
             "cost": 150,
             "id": "A150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1367,7 +1221,6 @@
             "cost": 175,
             "id": "A175",
             "free": true,
-            "imported": false,
             "req": [
                 "UD"
             ]
@@ -1377,7 +1230,6 @@
             "cost": 200,
             "id": "A200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1385,7 +1237,6 @@
             "cost": 250,
             "id": "A250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1393,7 +1244,6 @@
             "cost": 251,
             "id": "A251",
             "free": true,
-            "imported": false,
             "req": [
                 "DD",
                 ":UB"
@@ -1404,7 +1254,6 @@
             "cost": 270,
             "id": "A270",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1412,7 +1261,6 @@
             "cost": 300,
             "id": "A300",
             "free": true,
-            "imported": false,
             "req": [
                 "FC"
             ]
@@ -1422,7 +1270,6 @@
             "cost": 305,
             "id": "A305",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1430,7 +1277,6 @@
             "cost": 330,
             "id": "A330",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1438,7 +1284,6 @@
             "cost": 375,
             "id": "A375",
             "free": true,
-            "imported": false,
             "req": [
                 "DD"
             ]
@@ -1448,7 +1293,6 @@
             "cost": 400,
             "id": "A400",
             "free": false,
-            "imported": false,
             "req": [
                 "~MC"
             ]
@@ -1458,7 +1302,6 @@
             "cost": 410,
             "id": "A410",
             "free": true,
-            "imported": false,
             "req": [
                 "DW",
                 ":UB"
@@ -1469,7 +1312,6 @@
             "cost": 480,
             "id": "A480",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1477,7 +1319,6 @@
             "cost": 495,
             "id": "A495",
             "free": true,
-            "imported": false,
             "req": [
                 "DN"
             ]
@@ -1487,7 +1328,6 @@
             "cost": 545,
             "id": "A545",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1495,7 +1335,6 @@
             "cost": 590,
             "id": "A590",
             "free": true,
-            "imported": false,
             "req": [
                 "UD",
                 "DW"
@@ -1506,7 +1345,6 @@
             "cost": 1200,
             "id": "A1200",
             "free": true,
-            "imported": false,
             "req": [
                 "DG",
                 ":UB"
@@ -1517,7 +1355,6 @@
             "cost": 1325,
             "id": "A1325",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1525,7 +1362,6 @@
             "cost": 1500,
             "id": "A1500",
             "free": true,
-            "imported": false,
             "req": [
                 "DD",
                 "DG"
@@ -1536,7 +1372,6 @@
             "cost": 2950,
             "id": "A2950",
             "free": true,
-            "imported": false,
             "req": [
                 "MC"
             ]
@@ -1546,7 +1381,6 @@
             "cost": 3400,
             "id": "A3400",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1554,7 +1388,6 @@
             "cost": 5125,
             "id": "A5125",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1562,7 +1395,6 @@
             "cost": 5375,
             "id": "A5375",
             "free": false,
-            "imported": false,
             "req": [
                 "order"
             ]
@@ -1572,7 +1404,6 @@
             "cost": 5625,
             "id": "A5625",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1580,7 +1411,6 @@
             "cost": 5875,
             "id": "A5875",
             "free": false,
-            "imported": false,
             "req": []
         }
     ],
@@ -1590,7 +1420,6 @@
             "cost": 1,
             "id": "W1",
             "free": true,
-            "imported": false,
             "req": [
                 "DM",
                 ":UB"
@@ -1601,7 +1430,6 @@
             "cost": 10,
             "id": "W10",
             "free": true,
-            "imported": false,
             "req": [
                 "EL",
                 ":UB"
@@ -1612,7 +1440,6 @@
             "cost": 25,
             "id": "W25",
             "free": true,
-            "imported": false,
             "req": [
                 "GB"
             ]
@@ -1622,7 +1449,6 @@
             "cost": 50,
             "id": "W50",
             "free": true,
-            "imported": false,
             "req": [
                 "UD",
                 ":UB"
@@ -1633,7 +1459,6 @@
             "cost": 120,
             "id": "W120",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1641,7 +1466,6 @@
             "cost": 135,
             "id": "W135",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1649,7 +1473,6 @@
             "cost": 150,
             "id": "W150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1657,7 +1480,6 @@
             "cost": 175,
             "id": "W175",
             "free": true,
-            "imported": false,
             "req": [
                 "DM"
             ]
@@ -1667,7 +1489,6 @@
             "cost": 180,
             "id": "W180",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1675,7 +1496,6 @@
             "cost": 200,
             "id": "W200",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1683,7 +1503,6 @@
             "cost": 205,
             "id": "W205",
             "free": false,
-            "imported": false,
             "req": [
                 "evil"
             ]
@@ -1693,7 +1512,6 @@
             "cost": 225,
             "id": "W225",
             "free": true,
-            "imported": false,
             "req": [
                 "AN",
                 "good",
@@ -1705,7 +1523,6 @@
             "cost": 250,
             "id": "W250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1713,7 +1530,6 @@
             "cost": 260,
             "id": "W260",
             "free": true,
-            "imported": false,
             "req": [
                 "TT",
                 ":UB"
@@ -1724,7 +1540,6 @@
             "cost": 275,
             "id": "W275",
             "free": true,
-            "imported": false,
             "req": [
                 "FC"
             ]
@@ -1734,7 +1549,6 @@
             "cost": 290,
             "id": "W290",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1742,7 +1556,6 @@
             "cost": 320,
             "id": "W320",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1750,7 +1563,6 @@
             "cost": 330,
             "id": "W330",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1758,7 +1570,6 @@
             "cost": 350,
             "id": "W350",
             "free": true,
-            "imported": false,
             "req": [
                 "DD",
                 ":UB"
@@ -1769,7 +1580,6 @@
             "cost": 400,
             "id": "W400",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1777,7 +1587,6 @@
             "cost": 405,
             "id": "W405",
             "free": true,
-            "imported": false,
             "req": [
                 "DW",
                 ":UB"
@@ -1788,7 +1597,6 @@
             "cost": 520,
             "id": "W520",
             "free": true,
-            "imported": false,
             "req": [
                 "DW",
                 ":SP"
@@ -1799,7 +1607,6 @@
             "cost": 525,
             "id": "W525",
             "free": false,
-            "imported": false,
             "req": [
                 "evil"
             ]
@@ -1809,7 +1616,6 @@
             "cost": 560,
             "id": "W560",
             "free": true,
-            "imported": false,
             "req": [
                 "DN"
             ]
@@ -1819,7 +1625,6 @@
             "cost": 590,
             "id": "W590",
             "free": true,
-            "imported": false,
             "req": [
                 "DM",
                 "DW"
@@ -1830,7 +1635,6 @@
             "cost": 1275,
             "id": "W1275",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1838,7 +1642,6 @@
             "cost": 1375,
             "id": "W1375",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1846,7 +1649,6 @@
             "cost": 1400,
             "id": "W1400",
             "free": true,
-            "imported": false,
             "req": [
                 "DG"
             ]
@@ -1856,7 +1658,6 @@
             "cost": 3050,
             "id": "W3050",
             "free": true,
-            "imported": false,
             "req": [
                 "MC"
             ]
@@ -1866,7 +1667,6 @@
             "cost": 3150,
             "id": "W3150",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1874,7 +1674,6 @@
             "cost": 5125,
             "id": "W5125",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1882,7 +1681,6 @@
             "cost": 5375,
             "id": "W5375",
             "free": false,
-            "imported": false,
             "req": [
                 "evil"
             ]
@@ -1892,7 +1690,6 @@
             "cost": 5625,
             "id": "W5625",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1900,7 +1697,6 @@
             "cost": 5875,
             "id": "W5875",
             "free": false,
-            "imported": false,
             "req": []
         }
     ],
@@ -1910,7 +1706,6 @@
             "cost": 5250,
             "id": "F5250",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1918,7 +1713,6 @@
             "cost": 5500,
             "id": "F5500",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1926,7 +1720,6 @@
             "cost": 5750,
             "id": "F5750",
             "free": false,
-            "imported": false,
             "req": []
         },
         {
@@ -1934,7 +1727,6 @@
             "cost": 6000,
             "id": "F6000",
             "free": false,
-            "imported": false,
             "req": []
         }
     ]
